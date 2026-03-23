@@ -3,94 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Portfolio</title>
+    <title>NiniolaCodes | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* General Styles */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Inter', -apple-system, sans-serif; 
-            line-height: 1.6; 
-            background-color: #0d1117; /* GitHub Dark Theme vibe */
-            color: #c9d1d9;
+        /* Exact Color Palette from Reference */
+        :root {
+            --primary-bg: #0a0a0a;    /* Deep Black */
+            --secondary-bg: #161616;  /* Charcoal Grey */
+            --accent-blue: #007bff;   /* Brighter Action Blue */
+            --text-high: #ffffff;     /* Pure White */
+            --text-low: #a0a0a0;      /* Muted Grey */
+            --border-color: #262626;  /* Subtle Dividers */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-high);
+            line-height: 1.7;
+        }
+
+        /* --- Navigation --- */
+        nav {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-        }
-
-        /* Header / Hero Section */
-        header {
+            padding: 1.5rem 10%;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
             width: 100%;
-            padding: 4rem 1rem;
-            text-align: center;
-            background: linear-gradient(135deg, #1f6feb 0%, #238636 100%);
-            color: white;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        /* Main Content */
-        .content {
-            max-width: 800px;
-            width: 90%;
-            margin: 2rem 0;
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        h2 { border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; margin-top: 2rem; color: #58a6ff; }
-
-        /* Project Cards */
-        .project {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            transition: transform 0.2s;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-            border-color: #8b949e;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: #238636;
-            color: white;
+        .nav-links a {
+            color: var(--text-low);
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--text-high); }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 180px 10% 100px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            min-height: 80vh;
+        }
+
+        .hero-content { flex: 1; }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content span { color: var(--accent-blue); }
+
+        .hero-content p {
+            color: var(--text-low);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Buttons --- */
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* --- Work/Projects Section --- */
+        .section { padding: 80px 10%; }
+
+        .section-header {
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 15px;
+            margin-bottom: 40px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-blue);
+            background: #1c1c1c;
+        }
+
+        .project-card h3 { margin-bottom: 15px; font-size: 1.4rem; }
+
+        .project-card p {
+            color: var(--text-low);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- Contact Footer --- */
+        footer {
+            background: var(--secondary-bg);
+            padding: 60px 10%;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-text { color: var(--text-low); margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Hello, World! I'm a Developer.</h1>
-        <p>Welcome to my GitHub-hosted portfolio.</p>
-    </header>
+    <nav>
+        <div class="logo">NINIOLA<span>CODES</span></div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Portfolio</a>
+            <a href="mailto:your-email@gmail.com">Contact</a>
+        </div>
+    </nav>
 
-    <div class="content">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am building my very first website on GitHub! I'm interested in web development, design, and learning new technologies.</p>
-        </section>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>I Build <span>Scalable</span> Digital Solutions.</h1>
+            <p>Full-stack developer focused on creating high-impact web applications with modern architecture and clean code.</p>
+            <a href="mailto:your-email@gmail.com" class="btn-primary">Get In Touch</a>
+        </div>
+    </section>
 
-        <section id="projects">
-            <h2>My Projects</h2>
-            <div class="project">
-                <h3>Portfolio Website</h3>
-                <p>This very site you are looking at! Built with HTML and CSS.</p>
-                <a href="#" class="btn">View Source</a>
+    <section class="section" id="projects">
+        <div class="section-header">
+            <h2>Selected Projects</h2>
+        </div>
+        
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Enterprise CRM</h3>
+                <p>A custom management system built to streamline business workflows and data tracking.</p>
+                <a href="#" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">View Case Study →</a>
             </div>
-            
-            <div class="project">
-                <h3>Future App</h3>
-                <p>A placeholder for the next cool project I'm going to build.</p>
-                <a href="#" class="btn">Coming Soon</a>
+
+            <div class="project-card">
+                <h3>Fintech Interface</h3>
+                <p>High-security dashboard for monitoring real-time financial transactions and analytics.</p>
+                <a href="#" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">View Case Study →</a>
             </div>
-        </section>
-    </div>
+
+            <div class="project-card">
+                <h3>Cloud Infrastructure</h3>
+                <p>Automated deployment pipeline designed for high-availability web services.</p>
+                <a href="#" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">View Case Study →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">© 2026 NiniolaCodes. All rights reserved.</p>
+        <div class="nav-links" style="display: block;">
+            <a href="#" style="margin: 0 10px;">GitHub</a>
+            <a href="#" style="margin: 0 10px;">LinkedIn</a>
+        </div>
+    </footer>
 
 </body>
 </html>
