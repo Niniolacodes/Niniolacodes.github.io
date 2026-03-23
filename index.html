@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NiniolaCodes | Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>NiniolaCodes | Senior Full-Stack Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Exact Color Palette from Reference */
+        /* Tobi-Inspired Enterprise Color Palette */
         :root {
-            --primary-bg: #0a0a0a;    /* Deep Black */
-            --secondary-bg: #161616;  /* Charcoal Grey */
-            --accent-blue: #007bff;   /* Brighter Action Blue */
-            --text-high: #ffffff;     /* Pure White */
-            --text-low: #a0a0a0;      /* Muted Grey */
-            --border-color: #262626;  /* Subtle Dividers */
+            --bg-deep: #000000;
+            --bg-charcoal: #0a0a0a;
+            --bg-card: #111111;
+            --accent-blue: #007aff;
+            --border: #262626;
+            --text-white: #ffffff;
+            --text-muted: #888888;
+            --glass: rgba(10, 10, 10, 0.8);
         }
 
         * {
@@ -22,135 +24,175 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--primary-bg);
-            color: var(--text-high);
-            line-height: 1.7;
+            background-color: var(--bg-deep);
+            color: var(--text-white);
+            line-height: 1.6;
         }
 
-        /* --- Navigation --- */
+        /* --- NAVIGATION (Sticky Glassmorphism) --- */
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 10%;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
+            padding: 1.2rem 8%;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
             z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
         }
 
         .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
+            font-weight: 800;
+            font-size: 1.3rem;
             letter-spacing: -1px;
+            text-transform: uppercase;
         }
 
+        .logo span { color: var(--accent-blue); }
+
         .nav-links a {
-            color: var(--text-low);
+            color: var(--text-muted);
             text-decoration: none;
             margin-left: 2rem;
             font-size: 0.9rem;
+            font-weight: 500;
             transition: 0.3s;
         }
 
-        .nav-links a:hover { color: var(--text-high); }
+        .nav-links a:hover { color: var(--text-white); }
 
-        /* --- Hero Section --- */
-        .hero {
-            padding: 180px 10% 100px;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            min-height: 80vh;
-        }
-
-        .hero-content { flex: 1; }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content span { color: var(--accent-blue); }
-
-        .hero-content p {
-            color: var(--text-low);
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin-bottom: 2rem;
-        }
-
-        /* --- Buttons --- */
-        .btn-primary {
+        .btn-nav {
             background: var(--accent-blue);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: 0.3s;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 6px;
         }
 
-        .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        /* --- Work/Projects Section --- */
-        .section { padding: 80px 10%; }
-
-        .section-header {
-            border-left: 4px solid var(--accent-blue);
-            padding-left: 15px;
-            margin-bottom: 40px;
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at top right, #001d3d 0%, #000 50%);
         }
 
-        .project-grid {
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, var(--accent-blue), #5ac8fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .section { padding: 100px 8%; }
+
+        .section-tag {
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--accent-blue);
+            padding-left: 20px;
+        }
+
+        .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 20px;
         }
 
-        .project-card {
-            background: var(--secondary-bg);
-            border: 1px solid var(--border-color);
+        .service-card {
+            background: var(--bg-card);
             padding: 40px;
-            border-radius: 8px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
             transition: 0.3s;
         }
 
-        .project-card:hover {
+        .service-card:hover {
             border-color: var(--accent-blue);
-            background: #1c1c1c;
+            transform: translateY(-5px);
         }
 
-        .project-card h3 { margin-bottom: 15px; font-size: 1.4rem; }
+        .service-card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        .project-card p {
-            color: var(--text-low);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+        /* --- PROJECT CARDS --- */
+        .project-card {
+            background: var(--bg-charcoal);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: 0.4s;
         }
 
-        /* --- Contact Footer --- */
+        .project-card:hover { border-color: #444; }
+
+        .project-info { padding: 30px; }
+
+        .tech-tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            background: #1a1a1a;
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        /* --- FOOTER --- */
         footer {
-            background: var(--secondary-bg);
-            padding: 60px 10%;
+            padding: 80px 8% 40px;
+            border-top: 1px solid var(--border);
             text-align: center;
-            border-top: 1px solid var(--border-color);
         }
 
-        .footer-text { color: var(--text-low); margin-bottom: 20px; }
+        .footer-cta h2 { font-size: 3rem; margin-bottom: 20px; }
 
         @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 120px; }
-            .hero-content h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
@@ -159,52 +201,74 @@
     <nav>
         <div class="logo">NINIOLA<span>CODES</span></div>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Portfolio</a>
-            <a href="mailto:your-email@gmail.com">Contact</a>
+            <a href="#services">Services</a>
+            <a href="#work">Portfolio</a>
+            <a href="mailto:your-email@gmail.com" class="btn-nav">Hire Me</a>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>I Build <span>Scalable</span> Digital Solutions.</h1>
-            <p>Full-stack developer focused on creating high-impact web applications with modern architecture and clean code.</p>
-            <a href="mailto:your-email@gmail.com" class="btn-primary">Get In Touch</a>
+        <span class="section-tag">High-Performance Development</span>
+        <h1>Digital Architecture <span>Optimized.</span></h1>
+        <p>I engineer scalable full-stack applications and high-conversion digital experiences for forward-thinking brands.</p>
+        <a href="#work" style="text-decoration: none; color: white; border: 1px solid var(--border); padding: 12px 30px; border-radius: 8px;">View Projects</a>
+    </section>
+
+    <section class="section" id="services">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title">Core Services</h2>
+        <div class="grid-3">
+            <div class="service-card">
+                <h3>SaaS Development</h3>
+                <p>Building complex, subscription-based platforms with secure backend architecture and real-time data.</p>
+            </div>
+            <div class="service-card">
+                <h3>UI/UX Optimization</h3>
+                <p>Translating design systems into high-speed frontend interfaces that drive user engagement.</p>
+            </div>
+            <div class="service-card">
+                <h3>Cloud Solutions</h3>
+                <p>Architecting serverless deployments and automated pipelines for 99.9% uptime and scalability.</p>
+            </div>
         </div>
     </section>
 
-    <section class="section" id="projects">
-        <div class="section-header">
-            <h2>Selected Projects</h2>
-        </div>
-        
-        <div class="project-grid">
+    <section class="section" id="work" style="background: var(--bg-charcoal);">
+        <span class="section-tag">Case Studies</span>
+        <h2 class="section-title">Selected Work</h2>
+        <div class="grid-3">
             <div class="project-card">
-                <h3>Enterprise CRM</h3>
-                <p>A custom management system built to streamline business workflows and data tracking.</p>
-                <a href="#" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">View Case Study →</a>
+                <div class="project-info">
+                    <h3>Enterprise ERP System</h3>
+                    <p>A full-scale resource planning tool for streamlining corporate logistics.</p>
+                    <div class="tech-tags">
+                        <span class="tag">REACT</span>
+                        <span class="tag">NODE.JS</span>
+                        <span class="tag">POSTGRES</span>
+                    </div>
+                </div>
             </div>
-
             <div class="project-card">
-                <h3>Fintech Interface</h3>
-                <p>High-security dashboard for monitoring real-time financial transactions and analytics.</p>
-                <a href="#" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">View Case Study →</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Cloud Infrastructure</h3>
-                <p>Automated deployment pipeline designed for high-availability web services.</p>
-                <a href="#" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">View Case Study →</a>
+                <div class="project-info">
+                    <h3>Fintech Dashboard</h3>
+                    <p>Real-time crypto-currency tracking with advanced data visualization.</p>
+                    <div class="tech-tags">
+                        <span class="tag">TYPESCRIPT</span>
+                        <span class="tag">D3.JS</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p class="footer-text">© 2026 NiniolaCodes. All rights reserved.</p>
-        <div class="nav-links" style="display: block;">
-            <a href="#" style="margin: 0 10px;">GitHub</a>
-            <a href="#" style="margin: 0 10px;">LinkedIn</a>
+        <div class="footer-cta">
+            <h2>Let's build the <br>future together.</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Currently accepting new projects for 2026.</p>
+            <a href="mailto:your-email@gmail.com" class="btn-nav" style="padding: 15px 40px; font-size: 1.1rem; text-decoration: none;">Contact Niniola</a>
         </div>
+        <p style="margin-top: 80px; font-size: 0.8rem; color: #444;">&copy; 2026 NINIOLACODES. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
