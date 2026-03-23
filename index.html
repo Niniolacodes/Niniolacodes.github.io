@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <style>
+        /* General Styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.6; 
+            background-color: #0d1117; /* GitHub Dark Theme vibe */
+            color: #c9d1d9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header / Hero Section */
+        header {
+            width: 100%;
+            padding: 4rem 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #1f6feb 0%, #238636 100%);
+            color: white;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 800px;
+            width: 90%;
+            margin: 2rem 0;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        h2 { border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; margin-top: 2rem; color: #58a6ff; }
+
+        /* Project Cards */
+        .project {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: transform 0.2s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: #8b949e;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #238636;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hello, World! I'm a Developer.</h1>
+        <p>Welcome to my GitHub-hosted portfolio.</p>
+    </header>
+
+    <div class="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am building my very first website on GitHub! I'm interested in web development, design, and learning new technologies.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>This very site you are looking at! Built with HTML and CSS.</p>
+                <a href="#" class="btn">View Source</a>
+            </div>
+            
+            <div class="project">
+                <h3>Future App</h3>
+                <p>A placeholder for the next cool project I'm going to build.</p>
+                <a href="#" class="btn">Coming Soon</a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
