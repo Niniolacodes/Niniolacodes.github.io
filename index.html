@@ -21,7 +21,6 @@
         html { scroll-behavior: smooth; }
         body { background-color: #f8fafc; color: var(--text-main); line-height: 1.6; }
 
-        /* Navigation */
         nav {
             position: fixed; top: 0; width: 100%; background: var(--dark-bg);
             display: flex; justify-content: space-between; align-items: center;
@@ -34,9 +33,9 @@
         nav ul li a { text-decoration: none; color: #cbd5e1; font-weight: 500; font-size: 0.85rem; transition: 0.3s; }
         nav ul li a:hover { color: var(--primary-blue); }
 
-        /* Hero */
-        #home {
-            min-height: 80vh; background: var(--dark-bg); color: white;
+        header {
+            min-height: 70vh; background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg');
+            background-size: cover; background-position: center; color: white;
             display: flex; flex-direction: column; justify-content: center;
             align-items: center; text-align: center; padding: 120px 10% 60px;
         }
@@ -44,41 +43,33 @@
         h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; margin-bottom: 20px; }
         .hero-p { max-width: 800px; font-size: 1.1rem; color: #cbd5e1; margin-bottom: 40px; }
 
-        /* Sections */
         section { padding: 100px 10%; }
-        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; color: var(--dark-bg); text-align: center; }
+        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 50px; color: var(--dark-bg); text-align: center; }
         
-        /* About Section */
-        .about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; max-width: 1100px; margin: 0 auto; }
-        .about-text h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-blue); }
-        .about-text p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.05rem; }
+        .about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .about-text p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.1rem; }
 
-        /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-        .skill-card { background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); transition: 0.3s; }
-        .skill-card:hover { border-color: var(--primary-blue); transform: translateY(-5px); }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .skill-card { background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); }
         .skill-card h4 { margin-bottom: 20px; font-size: 1.2rem; color: var(--dark-bg); border-bottom: 2px solid var(--primary-blue); display: inline-block; }
         .skill-list { list-style: none; }
         .skill-list li { margin-bottom: 10px; font-size: 0.95rem; color: var(--text-muted); display: flex; align-items: center; }
         .skill-list li::before { content: '▹'; color: var(--primary-blue); margin-right: 10px; font-weight: bold; }
 
-        /* Experience Timeline */
-        .timeline { border-left: 2px solid var(--border-color); padding-left: 30px; position: relative; max-width: 800px; margin: 0 auto; }
-        .timeline-item { position: relative; margin-bottom: 50px; }
-        .timeline-item::before { content: ''; position: absolute; left: -41px; top: 5px; width: 20px; height: 20px; background: var(--primary-blue); border-radius: 50%; border: 4px solid white; }
-        .exp-date { font-weight: 700; color: var(--primary-blue); font-size: 0.9rem; margin-bottom: 5px; display: block; }
-        .exp-role { font-size: 1.3rem; font-weight: 800; color: var(--dark-bg); }
+        .experience-timeline { max-width: 1000px; margin: 0 auto; position: relative; }
+        .experience-timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: var(--border-color); }
+        .exp-item { position: relative; padding-left: 60px; margin-bottom: 60px; }
+        .exp-item::before { content: ''; position: absolute; left: 11px; top: 5px; width: 20px; height: 20px; background: var(--primary-blue); border-radius: 50%; border: 4px solid white; }
+        .exp-date { font-weight: 700; color: var(--primary-blue); display: block; margin-bottom: 5px; }
+        .exp-role { font-size: 1.4rem; font-weight: 800; color: var(--dark-bg); }
         .exp-company { font-weight: 600; color: var(--text-muted); margin-bottom: 15px; display: block; }
-        .exp-desc { list-style: square; padding-left: 20px; color: var(--text-muted); font-size: 0.95rem; }
+        .exp-bullets { padding-left: 20px; color: var(--text-muted); }
+        .exp-bullets li { margin-bottom: 10px; }
 
-        /* Footer */
-        footer { background: var(--dark-bg); color: white; padding: 60px 10%; text-align: center; }
-        .footer-link { color: var(--primary-blue); text-decoration: none; font-weight: 700; }
+        footer { background: var(--dark-bg); color: white; padding: 80px 10% 40px; text-align: center; }
+        .contact-btn { background: var(--primary-blue); color: #0f172a; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 30px; }
 
-        @media (max-width: 768px) {
-            .about-container { grid-template-columns: 1fr; text-align: center; }
-            nav ul { display: none; }
-        }
+        @media (max-width: 900px) { .about-container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -94,23 +85,21 @@
     </nav>
 
     <header id="home">
-        <span class="hero-tag">8-Year Career Journey</span>
-        <h1>Building Digital Growth through <span>Code & Strategy</span></h1>
-        <p class="hero-p">A results-driven WordPress Developer and SEO Specialist bridging the gap between technical excellence and user psychology.</p>
-        <a href="mailto:Niniolaifeoluwa54@gmail.com" style="background: var(--primary-blue); color: #0f172a; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700;">Work With Me</a>
+        <span class="hero-tag">8 Years of Professional Evolution</span>
+        <h1>Niniola Ifeoluwa Peter</h1>
+        <p class="hero-p">Results-driven WordPress Developer, SEO Specialist, and Digital Marketing Professional with 8+ years of experience building high-performing websites and executing data-driven marketing strategies.</p>
     </header>
 
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-container">
             <div class="about-text">
-                <h3>Technical Excellence Meets Psychology</h3>
-                <p>With an <strong>8-year career journey</strong> rooted in the intersection of technology and human behavior, I am a WordPress Developer, SEO Specialist, and Digital Marketing Professional.</p>
-                <p>My background—including a <strong>B.Sc. in Psychology from Federal University Oye Ekiti</strong>—gives me a unique edge: I don’t just build websites; I build digital experiences designed to convert based on how users think and navigate.</p>
-                <p>Since 2018, I have evolved from local freelance projects to leading high-level digital transitions for institutions like Docenti Global Business School.</p>
+                <p>I am a versatile tech professional specializing in conversion-focused WordPress and WooCommerce platforms. My 8-year career journey is built on the intersection of technology and human behavior.</p>
+                <p>My background—including a <strong>B.Sc. in Psychology from Federal University Oye Ekiti</strong>—allows me to design digital experiences based on how users think and navigate, ensuring every technical decision serves a marketing goal.</p>
+                <p>From local startups to institutions like Docenti Global Business School, I have a proven track record of increasing traffic, improving engagement, and driving business growth through strategic web development.</p>
             </div>
-            <div style="text-align: center;">
-                <img src="https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg" alt="Niniola Ifeoluwa Peter" style="width: 100%; max-width: 400px; border-radius: 20px; box-shadow: 20px 20px 0px var(--primary-blue);">
+            <div>
+                <img src="https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg" alt="Niniola" style="width: 100%; border-radius: 20px;">
             </div>
         </div>
     </section>
@@ -121,33 +110,37 @@
             <div class="skill-card">
                 <h4>Web Development</h4>
                 <ul class="skill-list">
-                    <li>WordPress Mastery & Customization</li>
-                    <li>WooCommerce Store Optimization</li>
-                    <li>Elementor & WPBakery Proficiency</li>
-                    <li>HTML, CSS & Basic PHP</li>
-                    <li>Website Speed (Core Web Vitals)</li>
-                    <li>Site Security & Hosting Management</li>
+                    <li>WordPress Custom Builds & Maintenance</li>
+                    <li>WooCommerce Setup & Optimization</li>
+                    <li>Elementor & WPBakery Page Builders</li>
+                    <li>HTML, CSS, Basic PHP</li>
+                    <li>Responsive & Mobile-First Design</li>
+                    <li>Website Speed & Core Web Vitals</li>
+                    <li>Plugin Configuration & Security</li>
+                    <li>cPanel & Hosting Management</li>
                 </ul>
             </div>
             <div class="skill-card">
-                <h4>SEO & Analytics</h4>
+                <h4>SEO Specialist</h4>
                 <ul class="skill-list">
-                    <li>Technical & On-Page SEO</li>
-                    <li>Keyword Research & Site Audits</li>
+                    <li>On-Page & Technical SEO</li>
+                    <li>Keyword Research & Optimization</li>
                     <li>Schema Markup & Structured Data</li>
-                    <li>Google Search Console Mastery</li>
-                    <li>Google Analytics Performance Tracking</li>
-                    <li>RankMath & Yoast Expert</li>
+                    <li>Internal Linking Strategy</li>
+                    <li>Google Search Console & Analytics</li>
+                    <li>RankMath & Yoast Mastery</li>
+                    <li>Website Audits & Tracking</li>
                 </ul>
             </div>
             <div class="skill-card">
-                <h4>Digital Strategy</h4>
+                <h4>Digital Marketing</h4>
                 <ul class="skill-list">
-                    <li>Meta Ads (Facebook & Instagram)</li>
-                    <li>Email Marketing Automation</li>
+                    <li>Performance Marketing (Meta Ads)</li>
+                    <li>Email Marketing (Mailchimp, Zoho)</li>
                     <li>Conversion Rate Optimization (CRO)</li>
-                    <li>Zoho Campaigns & Mailchimp</li>
+                    <li>Campaign Strategy & Execution</li>
                     <li>Content Strategy & Planning</li>
+                    <li>Copywriting & Canva Design</li>
                     <li>WhatsApp Marketing</li>
                 </ul>
             </div>
@@ -155,52 +148,118 @@
     </section>
 
     <section id="experience">
-        <h2 class="section-title">Career Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
+        <h2 class="section-title">Full Career History</h2>
+        <div class="experience-timeline">
+            
+            <div class="exp-item">
                 <span class="exp-date">August 2025 – Present</span>
                 <span class="exp-role">Web Developer & SEO Specialist</span>
                 <span class="exp-company">Docenti Global Business School – Lagos</span>
-                <ul class="exp-desc">
+                <ul class="exp-bullets">
                     <li>Lead development and continuous optimization of the institution’s WordPress website</li>
-                    <li>Implement technical SEO strategies to improve rankings</li>
-                    <li>Increase traffic and student conversions via optimized landing pages</li>
+                    <li>Implement technical SEO strategies (keywords, schema, internal linking) to improve rankings</li>
+                    <li>Increase website traffic and student conversions through optimized landing pages</li>
+                    <li>Improve Core Web Vitals and overall site performance</li>
+                    <li>Track and analyze performance using Google Analytics and Search Console</li>
                     <li>Execute email marketing and automation campaigns</li>
-                    <li>Analyze performance using Search Console and Google Analytics</li>
+                    <li>Implement conversion tracking and reporting for marketing campaigns</li>
                 </ul>
             </div>
-            <div class="timeline-item">
+
+            <div class="exp-item">
                 <span class="exp-date">March 2024 – June 2025</span>
                 <span class="exp-role">WordPress Developer</span>
                 <span class="exp-company">MSOrg Developers – Lagos</span>
-                <ul class="exp-desc">
+                <ul class="exp-bullets">
                     <li>Built and maintained SEO-optimized WordPress websites</li>
                     <li>Developed WooCommerce stores with secure payment integrations</li>
-                    <li>Improved site speed, responsiveness, and security</li>
+                    <li>Improved site speed, responsiveness, and performance</li>
+                    <li>Managed plugins, hosting, and website security</li>
                     <li>Collaborated with designers to enhance UI/UX</li>
                 </ul>
             </div>
-            <div class="timeline-item">
-                <span class="exp-date">2018 – 2023</span>
-                <span class="exp-role">Growth & Evolution Period</span>
-                <span class="exp-company">Legal Digital NG, FEWA, Lagos Fashion Fair, Homex West Africa</span>
-                <ul class="exp-desc">
-                    <li>Designed websites for legal firms and furniture retailers</li>
-                    <li>Increased social media engagement by 40% through content planning</li>
-                    <li>Managed multi-channel digital campaigns and influencer marketing</li>
-                    <li>Launched and managed WooCommerce platforms for global freelance clients</li>
+
+            <div class="exp-item">
+                <span class="exp-date">2023 – 2024</span>
+                <span class="exp-role">WordPress Developer</span>
+                <span class="exp-company">Legal Digital NG – Lagos</span>
+                <ul class="exp-bullets">
+                    <li>Designed and launched websites for legal firms</li>
+                    <li>Implemented SEO strategies (metadata, keyword optimization)</li>
+                    <li>Improved technical structure and loading speed</li>
+                    <li>Ensured compliance with legal content standards</li>
                 </ul>
             </div>
+
+            <div class="exp-item">
+                <span class="exp-date">Jan 2023 – Dec 2023</span>
+                <span class="exp-role">Social Media Manager</span>
+                <span class="exp-company">Furniture West Africa (FEWA) – Lagos</span>
+                <ul class="exp-bullets">
+                    <li>Developed and executed social media strategies</li>
+                    <li>Increased engagement by 40% through structured content planning</li>
+                    <li>Managed paid advertising campaigns and performance tracking</li>
+                    <li>Created high-converting product content and captions</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-date">Jan 2022 – Dec 2022</span>
+                <span class="exp-role">Digital Marketer</span>
+                <span class="exp-company">Lagos Fashion Fair – Lagos</span>
+                <ul class="exp-bullets">
+                    <li>Managed multi-channel digital campaigns</li>
+                    <li>Coordinated influencer marketing initiatives</li>
+                    <li>Designed marketing creatives using Canva</li>
+                    <li>Increased event visibility and traffic through ads and email campaigns</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-date">March 2022 – Dec 2022</span>
+                <span class="exp-role">Social Media Coordinator</span>
+                <span class="exp-company">ABOLLYHOST – Ibadan</span>
+                <ul class="exp-bullets">
+                    <li>Managed social media accounts and digital presence</li>
+                    <li>Updated WooCommerce platforms and improved user journey</li>
+                    <li>Optimized website structure for better conversions</li>
+                    <li>Monitored engagement and campaign performance</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-date">2020 – 2021</span>
+                <span class="exp-role">Website Developer & Digital Strategist</span>
+                <span class="exp-company">Homex West Africa – Lagos</span>
+                <ul class="exp-bullets">
+                    <li>Developed and managed WordPress/WooCommerce website</li>
+                    <li>Implemented SEO and mobile optimization</li>
+                    <li>Managed product listings and site content</li>
+                    <li>Analyzed traffic and improved user engagement</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-date">June 2021 – Present</span>
+                <span class="exp-role">Freelance WordPress Developer & Digital Marketer</span>
+                <span class="exp-company">Fiverr (DVStore, Go Dubai Market) – Remote</span>
+                <ul class="exp-bullets">
+                    <li>Built WordPress and WooCommerce websites for global clients</li>
+                    <li>Integrated payment gateways and optimized checkout systems</li>
+                    <li>Executed SEO and digital marketing campaigns</li>
+                    <li>Improved website performance and conversion rates</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
     <footer id="contact">
-        <h2>Let's Talk Results</h2>
-        <p style="margin: 20px 0; color: #cbd5e1;">Available for Remote and Hybrid opportunities.</p>
-        <p>Email: <a href="mailto:Niniolaifeoluwa54@gmail.com" class="footer-link">Niniolaifeoluwa54@gmail.com</a></p>
-        <p>Phone: <strong>+234 810 973 3031</strong></p>
-        <div style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">
-            &copy; 2026 Niniola Ifeoluwa Peter | Built with Code & Psychology
+        <h2>Ready to Scale Your Digital Presence?</h2>
+        <p style="color: #cbd5e1; margin-top: 15px;">Available for 8-year legacy projects and new growth opportunities.</p>
+        <a href="mailto:Niniolaifeoluwa54@gmail.com" class="contact-btn">Email Me Directly</a>
+        <div style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.85rem; color: #64748b;">
+            +234 810 973 3031 | Niniola Ifeoluwa Peter &copy; 2026
         </div>
     </footer>
 
