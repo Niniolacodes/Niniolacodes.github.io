@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niniola Ifeoluwa | WordPress Developer & SEO Specialist</title>
+    <title>Niniola Ifeoluwa | Senior WordPress Developer & SEO Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -15,12 +15,15 @@
             --tag-bg: #f0f9ff;
             --tag-text: #0ea5e9;
             --border-color: #e2e8f0;
+            --pill-bg: #f1f5f9;
+            --pill-text: #475569;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
         body { background-color: #f8fafc; color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
 
+        /* Navigation */
         nav {
             position: fixed; top: 0; width: 100%; background: var(--dark-bg);
             display: flex; justify-content: space-between; align-items: center;
@@ -35,6 +38,7 @@
         nav ul li a { text-decoration: none; color: #cbd5e1; font-weight: 500; font-size: 0.85rem; transition: 0.3s; }
         nav ul li a:hover { color: var(--primary-blue); }
 
+        /* Hero Section */
         #home {
             position: relative; min-height: 100vh; width: 100%;
             background: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.92)), url('https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg');
@@ -49,15 +53,13 @@
         .stat-item h2 { font-size: 2.2rem; color: var(--primary-blue); font-weight: 800; }
         .stat-item p { font-size: 0.7rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
 
+        /* Section Layouts */
         section { padding: 100px 10%; width: 100%; display: flex; flex-direction: column; align-items: center; }
         .section-subtitle { color: var(--primary-blue); text-transform: uppercase; font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; display: block; }
         .section-title { font-size: 2.8rem; color: var(--dark-bg); margin-bottom: 15px; font-weight: 800; text-align: center; }
         .section-desc { color: var(--text-muted); margin-bottom: 60px; max-width: 800px; text-align: center; }
 
-        .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; width: 100%; max-width: 1100px; align-items: center; }
-        .profile-pic { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-
-        /* TECHNICAL EXPERTISE GRID STYLES */
+        /* Technical Expertise Grid */
         .skills-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
@@ -87,26 +89,27 @@
 
         .pill-container { display: flex; flex-wrap: wrap; gap: 10px; }
         .pill { 
-            background: #f1f5f9; color: #475569; 
+            background: var(--pill-bg); color: var(--pill-text); 
             padding: 7px 14px; border-radius: 8px; font-size: 0.8rem; 
             font-weight: 600; border: 1px solid #e2e8f0;
         }
 
-        /* EXPERIENCE STYLES */
-        .timeline { position: relative; padding-left: 40px; border-left: 3px solid #e2e8f0; width: 100%; max-width: 900px; }
+        /* Experience Timeline */
+        .timeline { position: relative; padding-left: 40px; border-left: 3px solid #e2e8f0; width: 100%; max-width: 950px; }
         .timeline-item { position: relative; margin-bottom: 50px; }
         .timeline-dot { position: absolute; left: -53px; top: 10px; width: 20px; height: 20px; background: var(--primary-blue); border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 3px var(--primary-blue); }
         .exp-card { background: white; padding: 30px; border-radius: 16px; border: 1px solid #f1f5f9; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
         .date-badge { background: var(--primary-blue); color: #0f172a; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; display: inline-block; }
-        .exp-card h4 { font-size: 1.2rem; color: var(--dark-bg); margin-bottom: 5px; font-weight: 800; }
-        .exp-card h5 { color: var(--primary-blue); font-size: 0.9rem; margin-bottom: 15px; font-weight: 600; }
-        .exp-card ul { padding-left: 18px; color: var(--text-muted); font-size: 0.9rem; }
-        .exp-card ul li { margin-bottom: 8px; }
+        .exp-card h4 { font-size: 1.3rem; color: var(--dark-bg); margin-bottom: 5px; font-weight: 800; }
+        .exp-card h5 { color: var(--primary-blue); font-size: 0.95rem; margin-bottom: 15px; font-weight: 600; }
+        .exp-card ul { padding-left: 18px; color: var(--text-muted); font-size: 0.9rem; list-style-type: square; }
+        .exp-card ul li { margin-bottom: 10px; }
 
+        /* Footer */
         #contact { background: var(--dark-bg); color: white; text-align: center; padding: 100px 10% 50px; }
         .contact-link { color: var(--primary-blue); text-decoration: none; font-weight: 700; font-size: 1.2rem; }
 
-        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } nav ul { display: none; } }
+        @media (max-width: 768px) { nav ul { display: none; } section { padding: 60px 5%; } .timeline { padding-left: 30px; } .timeline-dot { left: -43px; } }
     </style>
 </head>
 <body>
@@ -118,8 +121,7 @@
         </div>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#skills">Expertise</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -128,209 +130,6 @@
     <header id="home">
         <div class="hero-tag">Remote & Hybrid Specialist | 8+ Years Experience</div>
         <h1>I Build Digital Growth through <span>Code & Psychology</span></h1>
-        <p style="max-width: 850px; color: #cbd5e1; margin: 20px auto;">Niniola Ifeoluwa: WordPress Developer, SEO Specialist, and Digital Marketing Professional. Bridging the gap between technical development and user behavior.</p>
+        <p style="max-width: 850px; color: #cbd5e1; margin: 20px auto;">Niniola Ifeoluwa: Senior WordPress Developer, SEO Specialist, and Digital Strategist. Merging technical precision with human-centric design.</p>
         <div class="hero-stats">
-            <div class="stat-item"><h2>8+</h2><p>Years Experience</p></div>
-            <div class="stat-item"><h2>250+</h2><p>Web Projects</p></div>
-            <div class="stat-item"><h2>SEO</h2><p>Expert Certified</p></div>
-        </div>
-    </header>
-
-    <section id="about">
-        <span class="section-subtitle">Professional Profile</span>
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-            <img src="https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg" alt="Niniola Ifeoluwa" class="profile-pic">
-            <div class="about-text">
-                <h3 style="margin-bottom: 20px; font-size: 1.8rem;">Niniola Ifeoluwa</h3>
-                <p>I am a versatile tech professional who specializes in building high-performing WordPress and WooCommerce platforms. My background in <strong>Psychology (B.Sc. from FUOYE)</strong> allows me to look beyond just the code; I design for how humans actually interact with technology.</p>
-                <p style="margin-top: 20px;">From Docenti Global Business School to international freelance projects, I have a proven track record of increasing traffic, improving engagement, and driving measurable business growth.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" style="background: #f1f5f9;">
-        <span class="section-subtitle">Technical Expertise</span>
-        <h2 class="section-title">My Skills & Technologies</h2>
-        <p class="section-desc">Comprehensive skill set spanning development, digital marketing, and automation.</p>
-        
-        <div class="skills-grid">
-            <div class="skill-group highlighted">
-                <div class="group-header"><div class="group-icon">W</div><h3>WordPress Mastery</h3></div>
-                <div class="pill-container">
-                    <span class="pill">Custom Theme Development</span><span class="pill">Plugin Development</span>
-                    <span class="pill">WooCommerce Expert</span><span class="pill">Elementor Pro</span>
-                    <span class="pill">ACF & CPT</span><span class="pill">WordPress Security</span>
-                    <span class="pill">Site Optimization</span><span class="pill">Multisite Setup</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="group-header"><div class="group-icon">📈</div><h3>Digital Marketing</h3></div>
-                <div class="pill-container">
-                    <span class="pill">SEO Optimization</span><span class="pill">Meta Ads Management</span>
-                    <span class="pill">Google Ads</span><span class="pill">Content Strategy</span>
-                    <span class="pill">Google Analytics</span><span class="pill">Email Marketing</span>
-                    <span class="pill">Conversion Optimization</span><span class="pill">A/B Testing</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="group-header"><div class="group-icon">🤖</div><h3>Automation & Bots</h3></div>
-                <div class="pill-container">
-                    <span class="pill">Chatbot Development</span><span class="pill">Marketing Automation</span>
-                    <span class="pill">Workflow Automation</span><span class="pill">Email Automation</span>
-                    <span class="pill">Lead Generation Bots</span><span class="pill">Zapier Integration</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="group-header"><div class="group-icon">🛒</div><h3>E-commerce</h3></div>
-                <div class="pill-container">
-                    <span class="pill">WooCommerce</span><span class="pill">Payment Integration</span>
-                    <span class="pill">Inventory Management</span><span class="pill">Shopping Cart Dev</span>
-                    <span class="pill">Order Tracking</span><span class="pill">Shipping Integration</span>
-                </div>
-            </div>
-
-            <div class="skill-group highlighted">
-                <div class="group-header"><div class="group-icon">🎓</div><h3>LMS & Platforms</h3></div>
-                <div class="pill-container">
-                    <span class="pill">Online Course Setup</span><span class="pill">LMS Platform Design</span>
-                    <span class="pill">Membership Sites</span><span class="pill">Funnel Creation</span>
-                    <span class="pill">Student Tracking</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="group-header"><div class="group-icon">🛠️</div><h3>Tools</h3></div>
-                <div class="pill-container">
-                    <span class="pill">Git & GitHub</span><span class="pill">cPanel/WHM</span>
-                    <span class="pill">Hostinger</span><span class="pill">Mailchimp</span>
-                    <span class="pill">phpMyAdmin</span><span class="pill">VS Code</span>
-                    <span class="pill">Photoshop</span><span class="pill">Trello</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <span class="section-subtitle">Career Journey</span>
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline">
-            
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="exp-card">
-                    <span class="date-badge">August 2025 – Present</span>
-                    <h4>Web Developer & SEO Specialist</h4>
-                    <h5>Docenti Global Business School – Lagos</h5>
-                    <ul>
-                        <li>Lead development and optimization of the institution’s WordPress website.</li>
-                        <li>Implement technical SEO strategies (keywords, schema, linking) for ranking.</li>
-                        <li>Manage email marketing, automation, and conversion tracking.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="exp-card">
-                    <span class="date-badge">March 2024 – June 2025</span>
-                    <h4>WordPress Developer</h4>
-                    <h5>MSOrg Developers – Lagos</h5>
-                    <ul>
-                        <li>Built and maintained SEO-optimized WordPress websites and WooCommerce stores.</li>
-                        <li>Improved site speed, responsiveness, and managed hosting security.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="exp-card">
-                    <span class="date-badge">2023 – 2024</span>
-                    <h4>WordPress Developer</h4>
-                    <h5>Legal Digital NG – Lagos</h5>
-                    <ul>
-                        <li>Launched niche websites for legal firms with specific technical SEO structures.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="exp-card">
-                    <span class="date-badge">Jan 2023 – Dec 2023</span>
-                    <h4>Social Media Manager</h4>
-                    <h5>Furniture West Africa (FEWA) – Lagos</h5>
-                    <ul>
-                        <li>Increased engagement by 40% through structured planning and paid ads.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="exp-card">
-                    <span class="date-badge">Jan 2022 – Dec 2022</span>
-                    <h4>Digital Marketer</h4>
-                    <h5>Lagos Fashion Fair – Lagos</h5>
-                    <ul>
-                        <li>Managed multi-channel campaigns and coordinated influencer marketing.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="exp-card">
-                    <span class="date-badge">March 2022 – Dec 2022</span>
-                    <h4>Social Media Coordinator</h4>
-                    <h5>ABOLLYHOST – Ibadan</h5>
-                    <ul>
-                        <li>Managed digital presence and updated WooCommerce user journeys.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="exp-card">
-                    <span class="date-badge">2020 – 2021</span>
-                    <h4>Website Developer & Digital Strategist</h4>
-                    <h5>Homex West Africa – Lagos</h5>
-                    <ul>
-                        <li>Managed WordPress/WooCommerce site content and mobile optimization.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="exp-card">
-                    <span class="date-badge">2018 – Present</span>
-                    <h4>Freelance WordPress Developer</h4>
-                    <h5>Fiverr / Remote</h5>
-                    <ul>
-                        <li>Built global e-commerce platforms and executed SEO for diverse niches.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer id="contact">
-        <h2 class="section-title" style="color:white">Let's Build Something Great</h2>
-        <div style="margin: 30px 0;">
-            <p>Direct Email: <br> <a href="mailto:Niniolaifeoluwa54@gmail.com" class="contact-link">Niniolaifeoluwa54@gmail.com</a></p>
-            <p style="margin-top:20px">Phone / WhatsApp: <br> <strong>+234 810 973 3031</strong></p>
-        </div>
-        <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; opacity: 0.6;">
-            &copy; 2026 Niniola Ifeoluwa | Senior Web Specialist
-        </div>
-    </footer>
-
-</body>
-</html>
+            <div class="stat-item"><h2>8+</h2><p>Years Experience</p
