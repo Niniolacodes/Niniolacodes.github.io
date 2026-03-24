@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Expertise - Skills Section</title>
+    <title>Tobi Arowosegbe | Full Stack Developer & Tech Consultant</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
+        /* --- GLOBAL & NAV STYLES --- */
         :root {
             --bg-color: #f8fafc;
             --card-bg: #ffffff;
             --primary-blue: #3498db;
+            --nav-bg: #0f172a;
             --text-dark: #1e293b;
+            --text-light: #ffffff;
             --text-muted: #64748b;
             --tag-bg: #f1f5f9;
             --tag-text: #475569;
@@ -19,157 +21,165 @@
             --highlight-blue: #0ea5e9;
         }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            font-family: 'Inter', sans-serif;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; }
+
+        nav {
+            background: var(--nav-bg);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .skills-section {
-            padding: 80px 20px;
-            max-width: 1300px;
-            margin: 0 auto;
-            text-align: center;
+        .logo { color: var(--text-light); font-weight: 800; font-size: 1.5rem; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo span { background: var(--primary-blue); padding: 5px 12px; border-radius: 4px; }
+        
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-blue); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 5%;
+            background: #ffffff;
+            min-height: 80vh;
         }
 
-        .skills-header {
-            margin-bottom: 50px;
+        .hero-content { flex: 1; max-width: 600px; }
+        .hero-content h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; color: var(--nav-bg); }
+        .hero-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
+        
+        .hero-image { flex: 1; display: flex; justify-content: center; position: relative; }
+        .hero-image img { 
+            width: 400px; 
+            height: 400px; 
+            object-fit: cover; 
+            border-radius: 30px; 
+            box-shadow: 20px 20px 0px var(--primary-blue);
         }
 
-        .skills-header span {
-            color: var(--primary-blue);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 10px;
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
         }
+        .btn-primary { background: var(--primary-blue); color: white; border: 2px solid var(--primary-blue); }
+        .btn-primary:hover { background: transparent; color: var(--primary-blue); }
 
-        .skills-header h2 {
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            margin: 0 0 15px 0;
-            font-weight: 700;
-        }
+        /* --- SKILLS SECTION (NEW DESIGN) --- */
+        .skills-section { padding: 100px 5%; text-align: center; background: var(--bg-color); }
+        .skills-header { margin-bottom: 60px; }
+        .skills-header span { color: var(--primary-blue); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 10px; }
+        .skills-header h2 { font-size: 2.8rem; color: var(--nav-bg); margin-bottom: 15px; }
+        .skills-header p { color: var(--text-muted); max-width: 650px; margin: 0 auto; }
 
-        .skills-header p {
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            padding: 10px;
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+            max-width: 1400px; 
+            margin: 0 auto; 
         }
 
         .skill-card {
             background: var(--card-bg);
             border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 35px 25px;
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
         }
 
-        /* The highlighted blue border for specific cards */
-        .skill-card.highlighted {
-            border: 2px solid var(--highlight-blue);
-            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.1);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
-        }
+        .skill-card.highlighted { border: 2.5px solid var(--highlight-blue); box-shadow: 0 15px 30px rgba(14, 165, 233, 0.1); }
+        .skill-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); }
 
         .card-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--highlight-blue);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-
-        .skill-card h3 {
-            font-size: 1.4rem;
-            color: var(--text-dark);
+            width: 60px; height: 60px;
+            background: var(--highlight-blue);
+            color: white; font-size: 24px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
             margin-bottom: 25px;
-            font-weight: 600;
         }
 
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
+        .skill-card h3 { font-size: 1.4rem; margin-bottom: 20px; color: var(--nav-bg); }
 
+        .tag-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
         .skill-tag {
-            background-color: var(--tag-bg);
+            background: var(--tag-bg);
             color: var(--tag-text);
-            padding: 8px 14px;
-            border-radius: 8px;
+            padding: 6px 14px;
+            border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 500;
-            border: 1px solid transparent;
-            transition: all 0.2s;
         }
 
-        .skill-tag:hover {
-            background-color: #e2e8f0;
-            color: var(--text-dark);
-        }
-
-        /* Floating Back to Top Button style (as seen in image) */
+        /* --- FOOTER & UTILS --- */
         .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
+            position: fixed; bottom: 30px; right: 30px;
+            width: 50px; height: 50px;
             background: var(--highlight-blue);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        @media (max-width: 768px) {
-            .skills-header h2 { font-size: 2rem; }
-            .skills-grid { grid-template-columns: 1fr; }
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 40px; }
+            .hero-content { margin-bottom: 50px; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-image img { width: 300px; height: 300px; }
         }
     </style>
 </head>
 <body>
 
-    <section class="skills-section">
+    <nav>
+        <a href="#" class="logo"><span>T</span> TOBI AROWOSEGBE</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Building Digital Solutions with a <span style="color:var(--primary-blue)">Human Touch</span></h1>
+            <p>I'm a versatile tech professional bridging the gap between high-end development and human psychology to create software that truly resonates.</p>
+            <a href="#contact" class="btn btn-primary">Hire Me Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="your-hero-image.jpg" alt="Tobi Arowosegbe">
+        </div>
+    </header>
+
+    <section class="skills-section" id="skills">
         <div class="skills-header">
             <span>Technical Expertise</span>
             <h2>My Skills & Technologies</h2>
-            <p>Comprehensive skill set spanning full-stack development, digital marketing, automation, and technical consultancy.</p>
+            <p>A comprehensive overview of my technical capabilities, from complex backend systems to automated marketing workflows.</p>
         </div>
 
         <div class="skills-grid">
-            
             <div class="skill-card">
-                <div class="card-icon">🐘</div>
+                <div class="card-icon">PHP</div>
                 <h3>Backend Development</h3>
                 <div class="tag-container">
                     <span class="skill-tag">PHP (Expert)</span>
@@ -292,7 +302,6 @@
                     <span class="skill-tag">Student Progress Tracking</span>
                 </div>
             </div>
-
         </div>
     </section>
 
