@@ -103,19 +103,22 @@
         --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
     }
 
+    /* Centering the entire section */
     #expertise {
-        padding: 60px 2%; /* Minimal side padding to remove the "block" look */
+        padding: 80px 0;
         width: 100%;
         background-color: #f8fafc;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Aligns header and grid to the center */
+        justify-content: center;
     }
 
     .expertise-header {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
         width: 100%;
+        padding: 0 20px;
     }
 
     .expertise-header span {
@@ -124,45 +127,49 @@
         font-weight: 700;
         font-size: 0.85rem;
         letter-spacing: 2px;
+        display: block;
+        margin-bottom: 10px;
     }
 
     .expertise-header h2 {
         font-size: 2.8rem;
         font-weight: 800;
         color: var(--dark-bg);
-        margin-top: 10px;
+        margin: 0;
     }
 
     .expertise-header p {
         color: var(--text-muted);
         max-width: 700px;
         margin: 15px auto 0;
+        font-size: 1.05rem;
     }
 
     .expertise-grid { 
         display: grid; 
-        /* Three columns that stretch to fill the 100% width container */
         grid-template-columns: repeat(3, 1fr); 
-        gap: 20px; 
-        width: 100%; 
-        max-width: 100%; /* Removes the side blocks by allowing full expansion */
+        gap: 30px; 
+        width: 90%; /* Leaves small breathing room on the edges */
+        max-width: 1250px; /* Prevents cards from becoming too wide on huge screens */
+        margin: 0 auto; /* Centers the grid block */
     }
 
     .exp-card { 
         background: #fff; 
         padding: 40px 30px; 
-        border-radius: 20px; 
+        border-radius: 24px; 
         box-shadow: var(--card-shadow);
         border: 1px solid #f1f5f9;
-        transition: transform 0.3s ease;
+        transition: all 0.3s ease;
         display: flex;
         flex-direction: column;
-        height: 100%;
+        text-align: left;
     }
 
     .exp-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-10px);
         border-color: var(--primary-blue);
+        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
     }
 
     .card-head {
@@ -176,12 +183,12 @@
         font-size: 2rem;
         color: var(--primary-blue);
         background: #f0f9ff;
-        padding: 10px;
-        border-radius: 12px;
+        padding: 12px;
+        border-radius: 14px;
     }
 
     .card-head h3 {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         font-weight: 700;
         color: var(--dark-bg);
     }
@@ -189,27 +196,32 @@
     .tag-container { 
         display: flex; 
         flex-wrap: wrap; 
-        gap: 8px; 
+        gap: 10px; 
     }
 
     .skill-tag { 
         background: var(--tag-bg); 
         color: var(--tag-text); 
-        padding: 7px 14px; 
-        border-radius: 8px; 
-        font-size: 0.8rem; 
+        padding: 8px 16px; 
+        border-radius: 10px; 
+        font-size: 0.85rem; 
         font-weight: 600; 
+        transition: 0.2s;
     }
 
-    /* Tablet adjustment - 2 columns */
+    .skill-tag:hover {
+        background: var(--primary-blue);
+        color: white;
+    }
+
+    /* Responsiveness for tablet/mobile */
     @media (max-width: 1100px) {
-        .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+        .expertise-grid { grid-template-columns: repeat(2, 1fr); width: 95%; }
     }
 
-    /* Mobile adjustment - 1 column */
     @media (max-width: 768px) {
-        .expertise-grid { grid-template-columns: 1fr; }
-        .expertise-header h2 { font-size: 2rem; }
+        .expertise-grid { grid-template-columns: 1fr; width: 90%; }
+        .expertise-header h2 { font-size: 2.2rem; }
     }
 </style>
 
@@ -217,7 +229,7 @@
     <div class="expertise-header">
         <span>Technical Expertise</span>
         <h2>My Skills & Technologies</h2>
-        <p>Comprehensive skill set spanning full-stack development, digital marketing, automation, and technical consultancy.</p>
+        <p>A comprehensive professional skill set spanning full-stack development, digital marketing, and complex technical automation.</p>
     </div>
 
     <div class="expertise-grid">
@@ -231,10 +243,8 @@
                 <span class="skill-tag">Plugin Development</span>
                 <span class="skill-tag">WooCommerce Expert</span>
                 <span class="skill-tag">Elementor Pro</span>
-                <span class="skill-tag">ACF & Custom Post Types</span>
                 <span class="skill-tag">WordPress Security</span>
                 <span class="skill-tag">Site Optimization</span>
-                <span class="skill-tag">Multisite Setup</span>
             </div>
         </div>
 
@@ -248,10 +258,8 @@
                 <span class="skill-tag">Meta Ads Management</span>
                 <span class="skill-tag">Google Ads</span>
                 <span class="skill-tag">Content Strategy</span>
-                <span class="skill-tag">Social Media Growth</span>
                 <span class="skill-tag">Google Analytics</span>
                 <span class="skill-tag">Email Marketing</span>
-                <span class="skill-tag">Conversion Optimization</span>
             </div>
         </div>
 
@@ -264,8 +272,6 @@
                 <span class="skill-tag">Chatbot Development</span>
                 <span class="skill-tag">Marketing Automation</span>
                 <span class="skill-tag">Workflow Automation</span>
-                <span class="skill-tag">Email Automation</span>
-                <span class="skill-tag">Lead Generation Bots</span>
                 <span class="skill-tag">Zapier Integration</span>
                 <span class="skill-tag">API Integration</span>
             </div>
@@ -280,7 +286,6 @@
                 <span class="skill-tag">WooCommerce</span>
                 <span class="skill-tag">Payment Integration</span>
                 <span class="skill-tag">Inventory Management</span>
-                <span class="skill-tag">Shopping Cart Development</span>
                 <span class="skill-tag">Product Management</span>
                 <span class="skill-tag">Shipping Integration</span>
             </div>
@@ -289,14 +294,13 @@
         <div class="exp-card">
             <div class="card-head">
                 <i class='bx bxs-graduation'></i>
-                <h3>LMS & Educational Platforms</h3>
+                <h3>LMS Platforms</h3>
             </div>
             <div class="tag-container">
                 <span class="skill-tag">Online Course Setup</span>
                 <span class="skill-tag">LMS Platform Design</span>
                 <span class="skill-tag">Membership Sites</span>
                 <span class="skill-tag">Funnel Creation</span>
-                <span class="skill-tag">Course Content Management</span>
             </div>
         </div>
 
@@ -309,11 +313,9 @@
                 <span class="skill-tag">Git & GitHub</span>
                 <span class="skill-tag">cPanel/WHM</span>
                 <span class="skill-tag">Hostinger</span>
-                <span class="skill-tag">Mailchimp</span>
                 <span class="skill-tag">Postman</span>
                 <span class="skill-tag">VS Code</span>
                 <span class="skill-tag">Adobe Photoshop</span>
-                <span class="skill-tag">Trello/Asana</span>
             </div>
         </div>
     </div>
