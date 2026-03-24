@@ -3,92 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niniola Peter | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Niniola Ifeoluwa | Portfolio</title>
+    <style>
+        /* CSS STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; background: #fff;
+            display: flex; justify-content: space-around; align-items: center;
+            padding: 1rem 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: 600; transition: 0.3s; }
+        nav ul li a:hover { color: #007bff; }
+
+        /* Home Section with Moving Background */
+        #home {
+            height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white;
+            background: linear-gradient(-45deg, #23a6d5, #23d5ab, #ee7752, #e73c7e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Section Layouts */
+        section { padding: 100px 20px; max-width: 1200px; margin: auto; }
+        h2 { text-align: center; margin-bottom: 40px; font-size: 2.5rem; color: #222; }
+
+        /* Fancy Moving Boxes for Skills & Experience */
+        .grid-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .fancy-box {
+            background: #fff; padding: 30px; border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer; border-bottom: 5px solid #007bff;
+            position: relative; overflow: hidden;
+        }
+        .fancy-box:active { transform: scale(0.9) rotate(2deg); }
+        .fancy-box:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .fancy-box h3 { color: #007bff; margin-bottom: 10px; }
+
+        /* Contact Section */
+        #contact { text-align: center; background: #fff; border-radius: 20px; padding: 50px; }
+        .contact-info { margin: 20px 0; font-size: 1.2rem; }
+
+        footer { text-align: center; padding: 20px; background: #222; color: #fff; }
+    </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header>
-    <nav class="navbar">
-        <h2 class="logo">Niniola</h2>
-        <ul class="nav-links">
+    <nav>
+        <div class="logo"><strong>NINIOLA.</strong></div>
+        <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
-</header>
 
-<!-- HERO -->
-<section id="home" class="hero">
-    <h1>Hi, I'm Niniola Peter</h1>
-    <p>SEO Specialist | Digital Marketer | WordPress Developer</p>
-    <a href="#contact" class="btn">Hire Me</a>
-</section>
+    <section id="home">
+        <h1>Niniola Ifeoluwa Peter</h1>
+        <p>WordPress Developer | SEO Specialist | Digital Marketer</p>
+    </section>
 
-<!-- ABOUT -->
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        Results-driven WordPress Developer, SEO Specialist, and Digital Marketer
-        with 5+ years of experience building high-performing websites and executing
-        data-driven marketing strategies.
-    </p>
-</section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Results-driven professional with 5+ years of experience. I bridge the gap between technical web development and psychology-driven marketing to grow businesses in Lagos and beyond.</p>
+    </section>
 
-<!-- SKILLS -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-        <div class="skill">WordPress Development</div>
-        <div class="skill">SEO Optimization</div>
-        <div class="skill">Digital Marketing</div>
-        <div class="skill">WooCommerce</div>
-        <div class="skill">Google Analytics</div>
-        <div class="skill">Meta Ads</div>
-    </div>
-</section>
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="grid-container">
+            <div class="fancy-box"><h3>WordPress</h3><p>Custom Builds, Elementor, WPBakery & Security.</p></div>
+            <div class="fancy-box"><h3>SEO</h3><p>Technical, On-Page, Schema & Performance Tracking.</p></div>
+            <div class="fancy-box"><h3>E-Commerce</h3><p>WooCommerce expert with secure payment setups.</p></div>
+            <div class="fancy-box"><h3>Digital Ads</h3><p>Performance marketing via Meta and Google Ads.</p></div>
+        </div>
+    </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-    <h2>Experience</h2>
+    <section id="services">
+        <h2>What I Offer</h2>
+        <div class="grid-container">
+            <div class="fancy-box"><h3>Web Development</h3><p>Responsive, mobile-first sites that convert.</p></div>
+            <div class="fancy-box"><h3>SEO Audits</h3><p>Comprehensive site analysis and ranking strategies.</p></div>
+            <div class="fancy-box"><h3>Marketing</h3><p>Email automation and multi-channel campaigns.</p></div>
+        </div>
+    </section>
 
-    <div class="job">
-        <h3>SEO Specialist & Digital Marketer</h3>
-        <p><strong>Docenti Global Business School</strong> (2025 - Present)</p>
-        <p>Managed SEO, digital campaigns, and analytics to improve traffic and conversions.</p>
-    </div>
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <div class="grid-container">
+            <div class="fancy-box">
+                <h3>Docenti Global</h3>
+                <p><strong>SEO Specialist</strong><br>Optimizing Core Web Vitals & student conversion.</p>
+            </div>
+            <div class="fancy-box">
+                <h3>MSOrg Developers</h3>
+                <p><strong>WP Developer</strong><br>Building SEO-optimized e-commerce platforms.</p>
+            </div>
+            <div class="fancy-box">
+                <h3>Legal Digital NG</h3>
+                <p><strong>WP Developer</strong><br>Creating compliant legal industry websites.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="job">
-        <h3>WordPress Developer</h3>
-        <p><strong>MSOrg Developers</strong> (2024 - 2025)</p>
-        <p>Built responsive WordPress websites and optimized performance.</p>
-    </div>
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            <p>Email: <strong>niniolaifeoluwa54@gmail.com</strong></p>
+            <p>Phone: <strong>+234 810 973 3031</strong></p>
+            <p>Location: Lagos, Nigeria</p>
+        </div>
+    </section>
 
-</section>
+    <footer>
+        <p>&copy; 2026 Niniola Ifeoluwa. All Rights Reserved.</p>
+    </footer>
 
-<!-- CONTACT -->
-<section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: niniolaifeoluwa54@gmail.com</p>
-    <p>Phone: 08109733031</p>
+    <script>
+        // JAVASCRIPT LOGIC
+        document.querySelectorAll('.fancy-box').forEach(box => {
+            box.addEventListener('click', function() {
+                // Add a temporary animation class or effect
+                this.style.backgroundColor = '#eefaff';
+                setTimeout(() => {
+                    this.style.backgroundColor = '#fff';
+                }, 500);
+            });
+        });
 
-    <form id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
-
-<footer>
-    <p>© 2026 Niniola Peter. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
