@@ -3,249 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niniola Ifeoluwa Peter | WordPress Developer & SEO Specialist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Niniola Ifeoluwa Peter | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* GLOBAL RESET & BASE (Professional Tones from Image 0) */
+        /* CORE STYLES */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { background-color: #f8fafc; color: #1e293b; overflow-x: hidden; text-align: center; }
+        body { background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
 
-        /* NAVIGATION - Professional Dark Bar */
+        /* NAV BAR */
         nav {
-            position: fixed; top: 0; width: 100%; background: #0f172a;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1.2rem 10%; z-index: 1000; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px); display: flex; justify-content: space-between;
+            align-items: center; padding: 1.2rem 10%; z-index: 1000;
         }
-        .logo { color: #38bdf8; font-size: 1.6rem; font-weight: 800; letter-spacing: -1px; }
+        .logo { color: #38bdf8; font-size: 1.5rem; font-weight: 800; }
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 30px; }
-        nav ul li a { text-decoration: none; color: #cbd5e1; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { text-decoration: none; color: #cbd5e1; font-weight: 500; transition: 0.3s; }
         nav ul li a:hover { color: #38bdf8; }
 
-        /* FULL SCREEN SECTIONS */
-        section { min-height: 100vh; width: 100%; padding: 120px 10%; display: flex; flex-direction: column; align-items: center; }
-
-        /* HERO SECTION - Vibrant Animated Gradient */
+        /* HERO SECTION (Image 3 Style) */
         #home {
-            justify-content: center; color: white;
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #0369a1, #075985);
-            background-size: 400% 400%;
-            animation: gradientMove 12s ease infinite;
+            position: relative; height: 100vh; width: 100%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; color: white; overflow: hidden;
         }
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        #home h1 { font-size: clamp(3rem, 10vw, 6rem); margin-bottom: 1.5rem; font-weight: 800; line-height: 1.1; letter-spacing: -2px; }
-        #home p { font-size: 1.6rem; opacity: 0.9; max-width: 800px; line-height: 1.4; }
+        #particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 
-        /* TYPOGRAPHY STANDARDS */
-        h2 { font-size: 3rem; color: #0f172a; margin-bottom: 20px; font-weight: 800; }
-        h3 { font-size: 1.8rem; color: #0f172a; margin-bottom: 15px; }
-        p.subtitle { font-size: 1.2rem; color: #64748b; max-width: 800px; margin: 0 auto 50px auto; line-height: 1.6; }
+        .hero-content { z-index: 10; padding: 0 10%; }
+        .hero-tag { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; color: #38bdf8; margin-bottom: 20px; display: inline-block; }
+        .hero-content h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; margin-bottom: 10px; }
+        .hero-content h1 span { color: #38bdf8; }
+        .hero-content p { font-size: 1.2rem; max-width: 800px; margin: 20px auto; opacity: 0.8; line-height: 1.6; }
 
-        /* ABOUT ME SECTION (2-Column Layout from Image 2) */
-        .about-grid {
-            display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px;
-            align-items: center; width: 100%; max-width: 1200px; text-align: left;
-        }
-        
-        .profile-pic-container { position: relative; width: 100%; }
-        .profile-pic {
-            width: 100%; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
-            aspect-ratio: 1 / 1.2; object-fit: cover;
-        }
-        
-        /* Float Badge Element from Image 2 */
-        .float-badge {
-            position: absolute; bottom: 20px; left: -20px;
-            background: #fff; padding: 15px 25px; border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 15px;
-        }
-        .badge-icon { background: #38bdf8; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 1.2rem; }
-        .badge-text h4 { font-size: 0.9rem; font-weight: 700; color: #0f172a; }
-        .badge-text p { font-size: 0.75rem; color: #64748b; margin: 0; }
+        /* BUTTONS (Triple Style) */
+        .btn-group { display: flex; gap: 15px; margin-top: 30px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        .btn-primary { background: #38bdf8; color: white; }
+        .btn-outline { border: 1.5px solid #38bdf8; color: white; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        .about-text h3 { font-size: 2.2rem; line-height: 1.3; margin-bottom: 25px; }
-        .about-text p { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 30px; }
-        
-        /* Highlight Feature Boxes in About Section */
-        .about-features { display: flex; gap: 20px; }
-        .feature-box { background: #e0f7ff; color: #0369a1; padding: 15px 25px; border-radius: 8px; font-weight: 600; flex: 1; text-align: center; }
+        /* STATS (Bottom of Hero) */
+        .hero-stats { display: flex; gap: 60px; margin-top: 60px; justify-content: center; }
+        .stat-item h2 { font-size: 2.2rem; color: #38bdf8; margin-bottom: 5px; }
+        .stat-item p { font-size: 0.8rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* SKILLS SECTION (Precise Layout from Image 1) */
-        .skills-container {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
-            width: 100%; max-width: 1200px;
-        }
-        .skill-column {
-            background: #fff; padding: 40px 30px; border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9;
-            text-align: left;
-        }
-        .skill-column h3 { color: #0f172a; font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
-        
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag {
-            background: #f1f9ff; color: #0ea5e9; padding: 6px 14px;
-            border-radius: 20px; font-size: 0.9rem; font-weight: 600;
-        }
+        /* SECTIONS */
+        section { padding: 120px 10%; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        h2.section-title { font-size: 2.5rem; color: #0f172a; margin-bottom: 50px; text-align: center; }
 
-        /* SERVICES GRID */
-        .grid-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px; margin-top: 40px; width: 100%; max-width: 1200px;
-        }
-        .service-box {
-            background: white; padding: 40px; border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; text-align: center;
-        }
-        .service-box:hover { transform: translateY(-10px); }
-        .service-box h3 { margin-bottom: 15px; font-size: 1.6rem; }
+        /* ABOUT GRID (Image 2 Style) */
+        .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; width: 100%; max-width: 1200px; text-align: left; align-items: center; }
+        .profile-pic { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .about-text h3 { font-size: 2rem; margin-bottom: 20px; line-height: 1.3; }
+        .about-text p { font-size: 1.1rem; line-height: 1.8; color: #475569; margin-bottom: 20px; }
 
-        /* CONTACT SECTION */
-        #contact { background: #f1f5f9; }
-        .contact-card { background: white; padding: 80px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); width: 100%; max-width: 1000px; }
+        /* SKILLS (Image 1 Style) */
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; max-width: 1200px; }
+        .skill-col { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .skill-col h4 { margin-bottom: 20px; color: #0f172a; font-size: 1.2rem; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-tag { background: #f1f9ff; color: #0369a1; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+
+        /* EXPERIENCE (Timeline Style) */
+        .timeline { position: relative; width: 100%; padding-left: 50px; border-left: 3px solid #e2e8f0; text-align: left; }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-dot { position: absolute; left: -61px; top: 10px; width: 18px; height: 18px; background: #38bdf8; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 0 3px #38bdf8; }
+        .exp-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #f1f5f9; }
+        .exp-card span.date { background: #38bdf8; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; display: inline-block; }
+        .exp-card h4 { font-size: 1.4rem; color: #0f172a; }
+        .exp-card h5 { color: #0ea5e9; margin-bottom: 15px; font-size: 1rem; }
+        .exp-card ul { padding-left: 20px; color: #64748b; }
+
+        /* CONTACT */
+        #contact { background: #0f172a; color: white; text-align: center; }
+        #contact h2 { color: white; }
+
+        @media (max-width: 900px) {
+            .about-grid, .skills-grid { grid-template-columns: 1fr; }
+            .hero-stats { gap: 20px; flex-wrap: wrap; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">NINIOLA P.</div>
+        <div class="logo">NINIOLA</div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#services">Services</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section id="home">
-        <h1>Niniola Ifeoluwa Peter</h1>
-        <p>A Results-driven WordPress Developer & SEO Specialist merging Psychology with Technical Excellence.</p>
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-tag">🚀 Available for Projects in Lagos & Remote</div>
+            <h1>Hi, I'm <span>Niniola Peter</span></h1>
+            <p>WordPress Developer • SEO Specialist • Digital Strategist. Merging 5+ years of technical web expertise with psychological insights to drive business growth.</p>
+            
+            <div class="btn-group">
+                <a href="#experience" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Hire Me Now</a>
+                <a href="#" class="btn btn-outline">Download CV</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item"><h2>200+</h2><p>Projects Delivered</p></div>
+                <div class="stat-item"><h2>5+</h2><p>Years Experience</p></div>
+                <div class="stat-item"><h2>100+</h2><p>Happy Clients</p></div>
+                <div class="stat-item"><h2>40%</h2><p>Engagement Boost</p></div>
+            </div>
+        </div>
     </section>
 
     <section id="about">
-        <h2>About Me</h2>
+        <h2 class="section-title">About Me</h2>
         <div class="about-grid">
-            <div class="profile-pic-container">
-                <img src="https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg" alt="Niniola Ifeoluwa" class="profile-pic">
-                <div class="float-badge">
-                    <div class="badge-icon">&#127891;</div>
-                    <div class="badge-text">
-                        <h4>Psychology & Tech</h4>
-                        <p>Bridging Data and UX</p>
-                    </div>
-                </div>
-            </div>
+            <img src="https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg" alt="Profile" class="profile-pic">
             <div class="about-text">
-                <h3>Connecting Technical Mastery with Digital Marketing Results</h3>
-                <p>
-                    I am a versatile professional with 5+ years of experience that bridges the complex gap between psychological insights and high-performance development. I specialize in building robust, conversion-focused WordPress and WooCommerce ecosystems using HTML, CSS, and PHP, while simultaneously optimizing visibility with data-driven SEO strategies and multi-channel digital campaigns.
-                    <br><br>
-                    My unique approach combines technical core competencies—including speed optimization and structured data—with strategic marketing intelligence. This allows me to create solutions that are not only robust and scalable but also optimized for engagement, student conversions, and measurable business growth.
-                </p>
-                <div class="about-features">
-                    <div class="feature-box">Clean Code, Great UX</div>
-                    <div class="feature-box">SEO & Conversion Strategy</div>
-                </div>
+                <h3>A versatile tech professional who bridges the gap between development and psychology.</h3>
+                <p>I specialize in building high-performance web applications using WordPress and WooCommerce, while simultaneously driving growth through strategic SEO and marketing. My unique approach combines technical excellence with consumer behavior intelligence.</p>
+                <p>I have successfully helped institutions like Docenti Global Business School increase conversions by up to 30% through technical site optimization and targeted digital campaigns.</p>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Technical Expertise</h2>
-        <p class="subtitle">Comprehensive skill set covering full-stack WordPress development, technical SEO, and conversion strategy.</p>
-        <div class="skills-container">
-            <div class="skill-column">
-                <h3>WordPress Mastery</h3>
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-col">
+                <h4>WordPress Mastery</h4>
                 <div class="skill-tags">
-                    <span class="skill-tag">Custom Theme Development</span>
-                    <span class="skill-tag">Plugin Development</span>
-                    <span class="skill-tag">WooCommerce Expert</span>
-                    <span class="skill-tag">Elementor Pro</span>
-                    <span class="skill-tag">WPBakery</span>
-                    <span class="skill-tag">WP Security</span>
-                    <span class="skill-tag">Site Optimization (Speed)</span>
-                    <span class="skill-tag">cPanel & Hosting</span>
+                    <span class="skill-tag">Custom Themes</span><span class="skill-tag">WooCommerce</span><span class="skill-tag">Elementor Pro</span>
+                    <span class="skill-tag">Speed Optimization</span><span class="skill-tag">WP Security</span><span class="skill-tag">ACF</span>
                 </div>
             </div>
-            
-            <div class="skill-column">
-                <h3>Technical SEO</h3>
+            <div class="skill-col">
+                <h4>Technical SEO</h4>
                 <div class="skill-tags">
-                    <span class="skill-tag">On-Page SEO</span>
-                    <span class="skill-tag">Technical SEO Audits</span>
-                    <span class="skill-tag">Schema Markup & Structured Data</span>
-                    <span class="skill-tag">Keyword Research</span>
-                    <span class="skill-tag">Google Search Console</span>
-                    <span class="skill-tag">Google Analytics</span>
-                    <span class="skill-tag">RankMath / Yoast</span>
-                    <span class="skill-tag">Internal Linking Strategy</span>
+                    <span class="skill-tag">Keyword Research</span><span class="skill-tag">Schema Markup</span><span class="skill-tag">Audits</span>
+                    <span class="skill-tag">Google Search Console</span><span class="skill-tag">RankMath</span><span class="skill-tag">Analytics</span>
                 </div>
             </div>
-
-            <div class="skill-column">
-                <h3>Frontend Development</h3>
+            <div class="skill-col">
+                <h4>Frontend & Strategy</h4>
                 <div class="skill-tags">
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3 / SCSS</span>
-                    <span class="skill-tag">JavaScript (ES6+)</span>
-                    <span class="skill-tag">Responsive Design</span>
-                    <span class="skill-tag">Core Web Vitals</span>
-                    <span class="skill-tag">Web Design (UI/UX)</span>
-                    <span class="skill-tag">Basic PHP</span>
+                    <span class="skill-tag">HTML5/CSS3</span><span class="skill-tag">JavaScript</span><span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Meta Ads</span><span class="skill-tag">UI/UX Design</span><span class="skill-tag">Marketing Automation</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services">
-        <h2>Services Offered</h2>
-        <div class="grid-container">
-            <div class="service-box"><h3>Conversion WordPress</h3><p>Custom, mobile-first sites that turn traffic into results.</p></div>
-            <div class="service-box"><h3>E-Commerce Scaling</h3><p>WooCommerce optimization with secure payment gateways.</p></div>
-            <div class="service-box"><h3>Technical SEO</h3><p>On-page audits and visibility improvements for ranking.</p></div>
-            <div class="service-box"><h3>Digital Marketing</h3><p>Multi-channel performance campaigns (Meta Ads).</p></div>
-        </div>
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <span class="date">Aug 2025 - Present</span>
+                    <h4>Web Developer & SEO Specialist</h4>
+                    <h5>Docenti Global Business School</h5>
+                    <ul><li>Lead technical optimization and SEO for the institution's digital presence.</li></ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <span class="date">Mar 2024 - June 2025</span>
+                    <h4>WordPress Developer</h4>
+                    <h5>MSOrg Developers</h5>
+                    <ul><li>Developed high-conversion e-commerce stores for diverse clients.</li></ul>
+                </div>
+            </div>
+            </div>
     </section>
 
     <section id="contact">
-        <div class="contact-card">
-            <h2>Let's Grow Together.</h2>
-            <div style="font-size: 1.4rem; margin-top: 30px; text-align: center;">
-                <p>Email: <strong>niniolaifeoluwa54@gmail.com</strong></p>
-                <p>Phone: <strong>+234 810 973 3031</strong></p>
-                <p style="margin-top: 20px; color: #38bdf8; font-weight: 600;">Lagos, Nigeria</p>
-            </div>
-        </div>
+        <h2>Get In Touch</h2>
+        <p>Email: niniolaifeoluwa54@gmail.com | Phone: +234 810 973 3031</p>
     </section>
 
     <script>
-        // Smooth Scrolling logic
-        document.querySelectorAll('nav ul li a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
+        // PARTICLES ENGINE
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-        // Add subtle animation or tactile feel when a skill is clicked
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mousedown', function() {
-                this.style.transition = "0.1s";
-                this.style.transform = "scale(0.9)";
-            });
-            tag.addEventListener('mouseup', function() {
-                this.style.transform = "scale(1)";
-            });
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < 100; i++) particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+
+        init(); animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         });
     </script>
 </body>
