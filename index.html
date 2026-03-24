@@ -590,3 +590,223 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<style>
+    :root {
+        --primary-blue: #38bdf8;
+        --dark-bg: #0f172a;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --border-color: #f1f5f9;
+        --accent-light: #f0f9ff;
+    }
+
+    #experience {
+        padding: 100px 0;
+        width: 100%;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .exp-header {
+        text-align: center;
+        margin-bottom: 70px;
+        width: 100%;
+    }
+
+    .exp-header span {
+        text-transform: uppercase;
+        color: var(--primary-blue);
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .exp-header h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--dark-bg);
+    }
+
+    .timeline {
+        width: 90%;
+        max-width: 1100px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .experience-item {
+        margin-bottom: 60px;
+        padding-left: 40px;
+        border-left: 3px solid var(--accent-light);
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .experience-item:hover {
+        border-left-color: var(--primary-blue);
+    }
+
+    .experience-item::before {
+        content: '';
+        position: absolute;
+        left: -11px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border: 4px solid var(--primary-blue);
+        border-radius: 50%;
+    }
+
+    .exp-content {
+        background: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        border: 1px solid var(--border-color);
+    }
+
+    .exp-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .role-info h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--dark-bg);
+    }
+
+    .company-name {
+        font-weight: 600;
+        color: var(--primary-blue);
+        font-size: 1.1rem;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .duration {
+        background: var(--accent-light);
+        color: var(--tag-text);
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+
+    .activities-list {
+        list-style: none;
+        margin-top: 20px;
+    }
+
+    .activities-list li {
+        display: flex;
+        gap: 12px;
+        color: var(--text-muted);
+        font-size: 1rem;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+
+    .activities-list li i {
+        color: var(--primary-blue);
+        font-size: 1.2rem;
+        margin-top: 3px;
+    }
+
+    @media (max-width: 768px) {
+        .exp-top { flex-direction: column; }
+        .exp-header h2 { font-size: 2.2rem; }
+        .timeline { width: 95%; }
+    }
+</style>
+
+<section id="experience">
+    <div class="exp-header">
+        <span>Career Journey</span>
+        <h2>Professional Experience</h2>
+    </div>
+
+    <div class="timeline">
+        <div class="experience-item">
+            <div class="exp-content">
+                <div class="exp-top">
+                    <div class="role-info">
+                        <h3>Senior WordPress Developer & SEO Lead</h3>
+                        <span class="company-name">Docenti Global Business School</span>
+                    </div>
+                    <span class="duration">2021 — Present</span>
+                </div>
+                <ul class="activities-list">
+                    <li><i class='bx bx-chevron-right'></i> Architected and maintained a robust Learning Management System (LMS) for global students.</li>
+                    <li><i class='bx bx-chevron-right'></i> Led SEO strategies that significantly increased organic traffic and institutional visibility.</li>
+                    <li><i class='bx bx-chevron-right'></i> Automated student enrollment workflows and payment gateway integrations.</li>
+                    <li><i class='bx bx-chevron-right'></i> Managed technical site audits and performance optimization for high-traffic educational portals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-content">
+                <div class="exp-top">
+                    <div class="role-info">
+                        <h3>Full Stack Developer & Growth Strategist</h3>
+                        <span class="company-name">Freelance / Independent Consultancy</span>
+                    </div>
+                    <span class="duration">2018 — 2021</span>
+                </div>
+                <ul class="activities-list">
+                    <li><i class='bx bx-chevron-right'></i> Developed custom WooCommerce platforms with integrated inventory and shipping management.</li>
+                    <li><i class='bx bx-chevron-right'></i> Created automated lead generation chatbots and marketing funnels for diverse clients.</li>
+                    <li><i class='bx bx-chevron-right'></i> Provided technical consultancy on system architecture and digital transformation strategies.</li>
+                    <li><i class='bx bx-chevron-right'></i> Executed full-scale Meta and Google Ads campaigns with proven ROI tracking.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-content">
+                <div class="exp-top">
+                    <div class="role-info">
+                        <h3>Web Developer & Digital Marketer</h3>
+                        <span class="company-name">Early Career Roles</span>
+                    </div>
+                    <span class="duration">2016 — 2018</span>
+                </div>
+                <ul class="activities-list">
+                    <li><i class='bx bx-chevron-right'></i> Specialized in custom theme development and responsive web design.</li>
+                    <li><i class='bx bx-chevron-right'></i> Managed social media growth strategies, achieving milestones like 75K+ proven reach.</li>
+                    <li><i class='bx bx-chevron-right'></i> Implemented core WordPress security protocols and site maintenance routines.</li>
+                    <li><i class='bx bx-chevron-right'></i> Integrated third-party APIs for email marketing and CRM synchronization.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
