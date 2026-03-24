@@ -604,7 +604,6 @@
 
 
 
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -619,19 +618,17 @@
     }
 
     #experience {
-        padding: 100px 0;
+        padding: 100px 5%;
         width: 100%;
         background-color: #ffffff;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
     }
 
     .exp-header {
         text-align: center;
         margin-bottom: 70px;
-        width: 100%;
     }
 
     .exp-header span {
@@ -651,22 +648,16 @@
     }
 
     .timeline {
-        width: 90%;
-        max-width: 1100px;
+        width: 100%;
+        max-width: 1000px;
         position: relative;
-        margin: 0 auto;
     }
 
     .experience-item {
-        margin-bottom: 60px;
-        padding-left: 40px;
+        margin-bottom: 50px;
+        padding-left: 45px;
         border-left: 3px solid var(--accent-light);
         position: relative;
-        transition: 0.3s;
-    }
-
-    .experience-item:hover {
-        border-left-color: var(--primary-blue);
     }
 
     .experience-item::before {
@@ -679,21 +670,22 @@
         background: white;
         border: 4px solid var(--primary-blue);
         border-radius: 50%;
+        z-index: 2;
     }
 
     .exp-content {
         background: #fff;
-        padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        padding: 35px;
+        border-radius: 24px;
         border: 1px solid var(--border-color);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     }
 
     .exp-top {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         flex-wrap: wrap;
         gap: 15px;
     }
@@ -704,26 +696,26 @@
         color: var(--dark-bg);
     }
 
-    .company-name {
+    .company-link {
         font-weight: 600;
         color: var(--primary-blue);
+        text-decoration: none;
         font-size: 1.1rem;
-        display: block;
+        display: inline-block;
         margin-top: 5px;
     }
 
     .duration {
-        background: var(--accent-light);
-        color: var(--tag-text);
-        padding: 8px 18px;
+        background: var(--dark-bg);
+        color: #fff;
+        padding: 6px 16px;
         border-radius: 50px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         font-weight: 700;
     }
 
     .activities-list {
         list-style: none;
-        margin-top: 20px;
     }
 
     .activities-list li {
@@ -731,26 +723,25 @@
         gap: 12px;
         color: var(--text-muted);
         font-size: 1rem;
-        margin-bottom: 15px;
+        margin-bottom: 18px;
         line-height: 1.6;
     }
 
     .activities-list li i {
         color: var(--primary-blue);
         font-size: 1.2rem;
-        margin-top: 3px;
+        margin-top: 4px;
     }
 
     @media (max-width: 768px) {
-        .exp-top { flex-direction: column; }
+        .exp-top { flex-direction: column; gap: 10px; }
         .exp-header h2 { font-size: 2.2rem; }
-        .timeline { width: 95%; }
     }
 </style>
 
 <section id="experience">
     <div class="exp-header">
-        <span>Career Journey</span>
+        <span>8 Years of Impact</span>
         <h2>Professional Experience</h2>
     </div>
 
@@ -759,16 +750,16 @@
             <div class="exp-content">
                 <div class="exp-top">
                     <div class="role-info">
-                        <h3>Senior WordPress Developer & SEO Lead</h3>
-                        <span class="company-name">Docenti Global Business School</span>
+                        <h3>Lead WordPress Developer & SEO Specialist</h3>
+                        <a href="#" class="company-link">Docenti Global Business School</a>
                     </div>
-                    <span class="duration">2021 — Present</span>
+                    <span class="duration">2021 — PRESENT</span>
                 </div>
                 <ul class="activities-list">
-                    <li><i class='bx bx-chevron-right'></i> Architected and maintained a robust Learning Management System (LMS) for global students.</li>
-                    <li><i class='bx bx-chevron-right'></i> Led SEO strategies that significantly increased organic traffic and institutional visibility.</li>
-                    <li><i class='bx bx-chevron-right'></i> Automated student enrollment workflows and payment gateway integrations.</li>
-                    <li><i class='bx bx-chevron-right'></i> Managed technical site audits and performance optimization for high-traffic educational portals.</li>
+                    <li><i class='bx bx-check-circle'></i> Architected and managed high-performance Learning Management Systems (LMS) for professional certification programs.</li>
+                    <li><i class='bx bx-check-circle'></i> Orchestrated technical SEO audits and growth strategies that scaled organic visibility and student enrollment.</li>
+                    <li><i class='bx bx-check-circle'></i> Automated complex student enrollment workflows and integrated multi-currency payment gateways for global transactions.</li>
+                    <li><i class='bx bx-check-circle'></i> Provided technical leadership and mentorship to junior developers and marketing interns.</li>
                 </ul>
             </div>
         </div>
@@ -777,16 +768,16 @@
             <div class="exp-content">
                 <div class="exp-top">
                     <div class="role-info">
-                        <h3>Full Stack Developer & Growth Strategist</h3>
-                        <span class="company-name">Freelance / Independent Consultancy</span>
+                        <h3>Full Stack Developer & Digital Strategist</h3>
+                        <span class="company-link">Independent Consultancy</span>
                     </div>
                     <span class="duration">2018 — 2021</span>
                 </div>
                 <ul class="activities-list">
-                    <li><i class='bx bx-chevron-right'></i> Developed custom WooCommerce platforms with integrated inventory and shipping management.</li>
-                    <li><i class='bx bx-chevron-right'></i> Created automated lead generation chatbots and marketing funnels for diverse clients.</li>
-                    <li><i class='bx bx-chevron-right'></i> Provided technical consultancy on system architecture and digital transformation strategies.</li>
-                    <li><i class='bx bx-chevron-right'></i> Executed full-scale Meta and Google Ads campaigns with proven ROI tracking.</li>
+                    <li><i class='bx bx-check-circle'></i> Designed and deployed custom WooCommerce platforms featuring advanced inventory management and API-driven shipping integrations.</li>
+                    <li><i class='bx bx-check-circle'></i> Developed AI-driven chatbots and automated marketing funnels that increased lead conversion rates by over 40%.</li>
+                    <li><i class='bx bx-check-circle'></i> Conducted digital transformation audits for SMEs, streamlining their operations through cloud-based workflow automation.</li>
+                    <li><i class='bx bx-check-circle'></i> Executed data-backed Meta and Google Ads campaigns, leveraging psychological triggers for optimized ROI.</li>
                 </ul>
             </div>
         </div>
@@ -795,16 +786,16 @@
             <div class="exp-content">
                 <div class="exp-top">
                     <div class="role-info">
-                        <h3>Web Developer & Digital Marketer</h3>
-                        <span class="company-name">Early Career Roles</span>
+                        <h3>Web Developer & Content Strategist</h3>
+                        <span class="company-link">Early Career Development</span>
                     </div>
                     <span class="duration">2016 — 2018</span>
                 </div>
                 <ul class="activities-list">
-                    <li><i class='bx bx-chevron-right'></i> Specialized in custom theme development and responsive web design.</li>
-                    <li><i class='bx bx-chevron-right'></i> Managed social media growth strategies, achieving milestones like 75K+ proven reach.</li>
-                    <li><i class='bx bx-chevron-right'></i> Implemented core WordPress security protocols and site maintenance routines.</li>
-                    <li><i class='bx bx-chevron-right'></i> Integrated third-party APIs for email marketing and CRM synchronization.</li>
+                    <li><i class='bx bx-check-circle'></i> Focused on bespoke WordPress theme development and mobile-first responsive design.</li>
+                    <li><i class='bx bx-check-circle'></i> Built and managed large-scale social media communities, achieving a proven reach of 75K+ users.</li>
+                    <li><i class='bx bx-check-circle'></i> Implemented rigorous website security protocols and proactive maintenance cycles for client portfolios.</li>
+                    <li><i class='bx bx-check-circle'></i> Integrated CRM tools and email marketing automation to bridge the gap between development and sales.</li>
                 </ul>
             </div>
         </div>
