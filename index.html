@@ -44,7 +44,6 @@
         }
         .hero-tag { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 10px 24px; border-radius: 50px; font-size: 0.85rem; color: var(--primary-blue); margin-bottom: 25px; display: inline-block; font-weight: 600; }
         .hero-content h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; margin-bottom: 15px; }
-        .hero-content h1 span { color: var(--primary-blue); }
         .hero-stats { display: flex; gap: 40px; margin-top: 50px; justify-content: center; flex-wrap: wrap; }
         .stat-item h2 { font-size: 2.2rem; color: var(--primary-blue); font-weight: 800; }
         .stat-item p { font-size: 0.7rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
@@ -55,12 +54,15 @@
         .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; width: 100%; max-width: 1100px; align-items: center; }
         .profile-pic { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; max-width: 1200px; }
-        .skill-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; padding: 30px; transition: 0.4s; }
-        .skill-card h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--dark-bg); border-bottom: 2px solid var(--primary-blue); display: inline-block; }
-        .skill-list { list-style: none; }
-        .skill-list li { margin-bottom: 10px; font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; }
-        .skill-list li::before { content: '▹'; color: var(--primary-blue); margin-right: 10px; font-weight: bold; }
+        /* Technical Expertise Styles */
+        .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 1200px; }
+        .expertise-card { background: white; padding: 40px 30px; border-radius: 24px; border: 1px solid var(--border-color); position: relative; overflow: hidden; transition: transform 0.3s ease; }
+        .expertise-card:hover { transform: translateY(-5px); }
+        .expertise-card i { font-size: 2rem; color: var(--primary-blue); margin-bottom: 20px; display: block; }
+        .expertise-card h3 { font-size: 1.4rem; color: var(--dark-bg); margin-bottom: 15px; font-weight: 700; }
+        .expertise-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tech-tags span { background: var(--tag-bg); color: var(--tag-text); padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; }
 
         .experience-container { width: 100%; max-width: 900px; }
         .timeline { position: relative; padding-left: 40px; border-left: 3px solid #e2e8f0; }
@@ -86,7 +88,7 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#expertise">Expertise</a></li>
             <li><a href="#experience">Experience</a></li>
         </ul>
     </nav>
@@ -114,42 +116,46 @@
         </div>
     </section>
 
-    <section id="skills" style="background: #f1f5f9;">
-        <h2 class="section-title">Core Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Web Development</h3>
-                <ul class="skill-list">
-                    <li>WordPress Customization & Maintenance</li>
-                    <li>WooCommerce Setup & Optimization</li>
-                    <li>Elementor & WPBakery Proficiency</li>
-                    <li>HTML, CSS & Basic PHP</li>
-                    <li>Responsive & Mobile-First Design</li>
-                    <li>Website Speed & Core Web Vitals</li>
-                    <li>cPanel & Hosting Management</li>
-                </ul>
+    <section id="expertise" style="background: #f1f5f9;">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <h3>Platform Development</h3>
+                <p>Architecting scalable WordPress solutions and robust E-commerce ecosystems tailored for high conversion.</p>
+                <div class="tech-tags">
+                    <span>WordPress CMS</span>
+                    <span>WooCommerce</span>
+                    <span>Custom PHP</span>
+                    <span>Elementor Pro</span>
+                    <span>HTML5/CSS3</span>
+                    <span>JavaScript</span>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>SEO & Analytics</h3>
-                <ul class="skill-list">
-                    <li>Technical & On-Page SEO</li>
-                    <li>Keyword Research & Optimization</li>
-                    <li>Schema Markup & Structured Data</li>
-                    <li>Google Search Console & Analytics</li>
-                    <li>RankMath & Yoast Expert</li>
-                    <li>Website Audits & Reporting</li>
-                </ul>
+
+            <div class="expertise-card">
+                <h3>Search Optimization</h3>
+                <p>Deep-dive technical SEO and data-driven content strategies to dominate search engine results.</p>
+                <div class="tech-tags">
+                    <span>Technical SEO</span>
+                    <span>Schema Markup</span>
+                    <span>RankMath</span>
+                    <span>Google Console</span>
+                    <span>Web Vitals</span>
+                    <span>KW Research</span>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>Digital Marketing</h3>
-                <ul class="skill-list">
-                    <li>Meta Ads (Facebook & Instagram)</li>
-                    <li>Email Marketing & Automation</li>
-                    <li>Conversion Rate Optimization (CRO)</li>
-                    <li>Zoho Campaigns & Mailchimp</li>
-                    <li>Content Strategy & Planning</li>
-                    <li>WhatsApp Marketing Automation</li>
-                </ul>
+
+            <div class="expertise-card">
+                <h3>Digital Growth</h3>
+                <p>Leveraging psychology and automation to build marketing funnels that turn visitors into loyal students/customers.</p>
+                <div class="tech-tags">
+                    <span>Meta Ads</span>
+                    <span>Email Automation</span>
+                    <span>CRO</span>
+                    <span>Zoho CRM</span>
+                    <span>Google Analytics</span>
+                    <span>Lead Gen</span>
+                </div>
             </div>
         </div>
     </section>
@@ -172,7 +178,6 @@
                             <li>Improve Core Web Vitals and overall site performance.</li>
                             <li>Track and analyze performance using Google Analytics and Search Console.</li>
                             <li>Execute email marketing and automation campaigns.</li>
-                            <li>Implement conversion tracking and reporting for marketing campaigns.</li>
                         </ul>
                     </div>
                 </div>
@@ -187,8 +192,6 @@
                             <li>Built and maintained SEO-optimized WordPress websites.</li>
                             <li>Developed WooCommerce stores with secure payment integrations.</li>
                             <li>Improved site speed, responsiveness, and performance.</li>
-                            <li>Managed plugins, hosting, and website security.</li>
-                            <li>Collaborated with designers to enhance UI/UX.</li>
                         </ul>
                     </div>
                 </div>
@@ -203,7 +206,6 @@
                             <li>Designed and launched websites specifically for legal firms.</li>
                             <li>Implemented SEO strategies (metadata, keyword optimization).</li>
                             <li>Improved technical structure and loading speed.</li>
-                            <li>Ensured compliance with legal content standards.</li>
                         </ul>
                     </div>
                 </div>
@@ -218,7 +220,6 @@
                             <li>Developed and executed social media strategies.</li>
                             <li>Increased engagement by 40% through structured content planning.</li>
                             <li>Managed paid advertising campaigns and performance tracking.</li>
-                            <li>Created high-converting product content and captions.</li>
                         </ul>
                     </div>
                 </div>
@@ -232,38 +233,7 @@
                         <ul>
                             <li>Managed multi-channel digital campaigns.</li>
                             <li>Coordinated influencer marketing initiatives.</li>
-                            <li>Designed marketing creatives using Canva.</li>
-                            <li>Increased event visibility and traffic through ads and email campaigns.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="exp-card">
-                        <span class="date-badge">March 2022 – Dec 2022</span>
-                        <h4>Social Media Coordinator</h4>
-                        <h5>ABOLLYHOST – Ibadan</h5>
-                        <ul>
-                            <li>Managed social media accounts and digital presence.</li>
-                            <li>Updated WooCommerce platforms and improved user journey.</li>
-                            <li>Optimized website structure for better conversions.</li>
-                            <li>Monitored engagement and campaign performance.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="exp-card">
-                        <span class="date-badge">2020 – 2021</span>
-                        <h4>Website Developer & Digital Strategist</h4>
-                        <h5>Homex West Africa – Lagos</h5>
-                        <ul>
-                            <li>Developed and managed WordPress/WooCommerce website.</li>
-                            <li>Implemented SEO and mobile optimization.</li>
-                            <li>Managed product listings and site content.</li>
-                            <li>Analyzed traffic and improved user engagement.</li>
+                            <li>Increased event visibility through targeted ads.</li>
                         </ul>
                     </div>
                 </div>
@@ -275,10 +245,9 @@
                         <h4>Freelance WordPress Developer</h4>
                         <h5>Fiverr / Remote</h5>
                         <ul>
-                            <li>Built WordPress and WooCommerce websites for global clients (DVStore, Go Dubai Market).</li>
+                            <li>Built WordPress and WooCommerce websites for global clients.</li>
                             <li>Integrated payment gateways and optimized checkout systems.</li>
                             <li>Executed SEO and digital marketing campaigns for diverse niches.</li>
-                            <li>Improved website performance and conversion rates for freelance partners.</li>
                         </ul>
                     </div>
                 </div>
