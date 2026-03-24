@@ -94,230 +94,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Expertise Section</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Niniola Ifeoluwa | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #38bdf8;
             --dark-bg: #0f172a;
             --text-main: #1e293b;
             --text-muted: #64748b;
-            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
             --tag-bg: #e0f2fe;
             --tag-text: #0369a1;
-            --border-color: #f1f5f9;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #f8fafc; padding: 60px 5%; }
+        body { background-color: #f8fafc; color: var(--text-main); line-height: 1.7; width: 100%; overflow-x: hidden; }
 
-        .expertise-header {
-            text-align: center;
-            margin-bottom: 50px;
+        /* Navigation - Full Width */
+        nav {
+            position: fixed; top: 0; width: 100%; background: var(--dark-bg);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 10%; z-index: 1000;
         }
-        .expertise-header span {
-            text-transform: uppercase;
-            color: var(--primary-blue);
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
+        .logo { color: #fff; font-size: 1.2rem; font-weight: 800; text-decoration: none; text-transform: uppercase; }
+        .logo span { color: var(--primary-blue); }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { text-decoration: none; color: #cbd5e1; font-size: 0.85rem; font-weight: 500; }
+
+        /* Hero - Full Width */
+        #home {
+            height: 60vh; width: 100%; 
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg');
+            background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
         }
-        .expertise-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark-bg);
-            margin-top: 10px;
+
+        /* About Section */
+        #about { padding: 80px 10%; background: white; width: 100%; }
+        .about-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; width: 100%; align-items: center; }
+        .about-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .about-content h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; }
+        .highlight { color: var(--dark-bg); font-weight: 600; }
+
+        /* Technical Expertise - NO SIDE BLOCKS */
+        #expertise { 
+            padding: 80px 10%; /* Matches Nav and About padding */
+            width: 100%; 
+            background-color: #f8fafc;
         }
-        .expertise-header p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 15px auto 0;
-        }
+
+        .section-header { text-align: center; margin-bottom: 50px; width: 100%; }
+        .section-header h2 { font-size: 2.5rem; font-weight: 800; color: var(--dark-bg); }
 
         .expertise-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            grid-template-columns: repeat(3, 1fr); /* Forces 3 columns to fill the width */
             gap: 25px; 
-            max-width: 1200px; 
+            width: 100%; 
             margin: 0 auto;
         }
 
         .exp-card { 
             background: #fff; 
-            padding: 40px 30px; 
+            padding: 35px; 
             border-radius: 20px; 
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            height: 100%;
         }
 
-        .exp-card:hover { 
-            transform: translateY(-5px); 
-            border-color: var(--primary-blue);
-        }
-
-        .card-head {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .card-head i {
-            font-size: 2.2rem;
-            color: var(--primary-blue);
-            background: #f0f9ff;
-            padding: 10px;
-            border-radius: 12px;
-        }
-
-        .card-head h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--dark-bg);
-        }
-        
-        .tag-container { 
+        .exp-card h3 { 
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            margin-bottom: 20px; 
             display: flex; 
-            flex-wrap: wrap; 
-            gap: 8px; 
+            align-items: center; 
+            gap: 10px;
         }
 
+        .tag-container { display: flex; flex-wrap: wrap; gap: 8px; }
         .skill-tag { 
             background: var(--tag-bg); 
             color: var(--tag-text); 
-            padding: 7px 14px; 
+            padding: 6px 12px; 
             border-radius: 8px; 
             font-size: 0.8rem; 
             font-weight: 600; 
-            border: 1px solid transparent;
-            transition: 0.3s;
         }
 
-        .skill-tag:hover {
-            background: #bae6fd;
-            border-color: var(--primary-blue);
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .expertise-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
         @media (max-width: 768px) {
-            .expertise-header h2 { font-size: 2rem; }
-            .expertise-grid { grid-template-columns: 1fr; }
+            .about-container, .expertise-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+            #home h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <a href="#" class="logo">NINIOLA <span>IFEOLUWA</span></a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#expertise">Skills</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Niniola Ifeoluwa</h1>
+        <p>WordPress Developer & Digital Growth Specialist</p>
+    </header>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg" alt="Niniola Ifeoluwa">
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>I am a <span class="highlight">WordPress Developer and SEO Specialist</span> with 8 years of experience. I hold a <span class="highlight">B.Sc. in Psychology</span>, which helps me design websites that align with user behavior and conversion goals.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="expertise">
-        <div class="expertise-header">
-            <span>Technical Expertise</span>
+        <div class="section-header">
+            <p style="color: var(--primary-blue); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Technical Expertise</p>
             <h2>My Skills & Technologies</h2>
-            <p>Comprehensive skill set spanning full-stack development, digital marketing, automation, and technical consultancy.</p>
         </div>
 
         <div class="expertise-grid">
             <div class="exp-card">
-                <div class="card-head">
-                    <i class='bx bxl-wordpress'></i>
-                    <h3>WordPress Mastery</h3>
-                </div>
+                <h3>🌐 WordPress Mastery</h3>
                 <div class="tag-container">
                     <span class="skill-tag">Custom Theme Development</span>
                     <span class="skill-tag">Plugin Development</span>
                     <span class="skill-tag">WooCommerce Expert</span>
                     <span class="skill-tag">Elementor Pro</span>
-                    <span class="skill-tag">ACF & Custom Post Types</span>
                     <span class="skill-tag">WordPress Security</span>
                     <span class="skill-tag">Site Optimization</span>
-                    <span class="skill-tag">Multisite Setup</span>
                 </div>
             </div>
 
             <div class="exp-card">
-                <div class="card-head">
-                    <i class='bx bx-trending-up'></i>
-                    <h3>Digital Marketing</h3>
-                </div>
+                <h3>📈 Digital Marketing</h3>
                 <div class="tag-container">
                     <span class="skill-tag">SEO Optimization</span>
                     <span class="skill-tag">Meta Ads Management</span>
                     <span class="skill-tag">Google Ads</span>
                     <span class="skill-tag">Content Strategy</span>
-                    <span class="skill-tag">Social Media Growth</span>
                     <span class="skill-tag">Google Analytics</span>
                     <span class="skill-tag">Email Marketing</span>
-                    <span class="skill-tag">Brand Strategy</span>
-                    <span class="skill-tag">Conversion Optimization</span>
-                    <span class="skill-tag">A/B Testing</span>
                 </div>
             </div>
 
             <div class="exp-card">
-                <div class="card-head">
-                    <i class='bx bx-bot'></i>
-                    <h3>Automation & Chatbots</h3>
-                </div>
+                <h3>🤖 Automation & Chatbots</h3>
                 <div class="tag-container">
                     <span class="skill-tag">Chatbot Development</span>
                     <span class="skill-tag">Marketing Automation</span>
                     <span class="skill-tag">Workflow Automation</span>
-                    <span class="skill-tag">Email Automation</span>
-                    <span class="skill-tag">Lead Generation Bots</span>
-                    <span class="skill-tag">Customer Service Automation</span>
                     <span class="skill-tag">Zapier Integration</span>
                     <span class="skill-tag">API Integration</span>
                 </div>
             </div>
 
             <div class="exp-card">
-                <div class="card-head">
-                    <i class='bx bx-shopping-bag'></i>
-                    <h3>E-commerce Solutions</h3>
-                </div>
+                <h3>🛒 E-commerce Solutions</h3>
                 <div class="tag-container">
                     <span class="skill-tag">WooCommerce</span>
                     <span class="skill-tag">Payment Integration</span>
                     <span class="skill-tag">Inventory Management</span>
-                    <span class="skill-tag">Shopping Cart Development</span>
+                    <span class="skill-tag">Shopping Cart Dev</span>
                     <span class="skill-tag">Product Management</span>
-                    <span class="skill-tag">Order Tracking Systems</span>
-                    <span class="skill-tag">Shipping Integration</span>
                 </div>
             </div>
 
             <div class="exp-card">
-                <div class="card-head">
-                    <i class='bx bxs-graduation'></i>
-                    <h3>LMS & Educational Platforms</h3>
-                </div>
+                <h3>🎓 LMS Platforms</h3>
                 <div class="tag-container">
                     <span class="skill-tag">Online Course Setup</span>
                     <span class="skill-tag">LMS Platform Design</span>
                     <span class="skill-tag">Membership Sites</span>
                     <span class="skill-tag">Funnel Creation</span>
-                    <span class="skill-tag">Course Content Management</span>
-                    <span class="skill-tag">Student Progress Tracking</span>
                 </div>
             </div>
 
             <div class="exp-card">
-                <div class="card-head">
-                    <i class='bx bx-wrench'></i>
-                    <h3>Tools & Platforms</h3>
-                </div>
+                <h3>🛠️ Tools & Platforms</h3>
                 <div class="tag-container">
                     <span class="skill-tag">Git & GitHub</span>
                     <span class="skill-tag">cPanel/WHM</span>
                     <span class="skill-tag">Hostinger</span>
-                    <span class="skill-tag">Google Analytics</span>
                     <span class="skill-tag">Mailchimp</span>
-                    <span class="skill-tag">phpMyAdmin</span>
                     <span class="skill-tag">Postman</span>
                     <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">Adobe Photoshop</span>
-                    <span class="skill-tag">Trello/Asana</span>
                 </div>
             </div>
         </div>
