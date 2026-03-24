@@ -14,7 +14,7 @@
         nav {
             position: fixed; top: 0; width: 100%; background: #0f172a;
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1rem 10%; z-index: 1000; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            padding: 1rem 5%; z-index: 1000; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
         }
         .logo { color: #38bdf8; font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
         nav ul { display: flex; list-style: none; }
@@ -23,27 +23,27 @@
         nav ul li a:hover { color: #38bdf8; }
 
         /* FULL SCREEN SECTIONS */
-        section { min-height: 100vh; width: 100%; padding: 100px 10%; display: flex; flex-direction: column; justify-content: center; }
+        section { min-height: 100vh; width: 100%; padding: 120px 5%; display: flex; flex-direction: column; }
 
         /* HOME SECTION - Animated Gradient */
         #home {
+            justify-content: center; align-items: center; text-align: center; color: white;
             background: linear-gradient(-45deg, #0f172a, #1e293b, #0369a1, #075985);
             background-size: 400% 400%;
             animation: gradientMove 12s ease infinite;
-            color: white; text-align: center; align-items: center;
         }
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        #home h1 { font-size: 4rem; margin-bottom: 1rem; }
+        #home h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 1rem; }
         #home p { font-size: 1.5rem; opacity: 0.9; }
 
-        /* SKILLS FANCY BOXES */
+        /* WIDE GRID FOR SKILLS & SERVICES */
         .grid-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px; margin-top: 40px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px; margin-top: 40px; width: 100%;
         }
         .fancy-box {
             background: white; padding: 40px; border-radius: 12px;
@@ -52,47 +52,47 @@
             border-top: 4px solid #38bdf8;
         }
         .fancy-box:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        .fancy-box:active { transform: scale(0.95); }
-        .fancy-box h3 { margin-bottom: 15px; color: #0f172a; }
+        .fancy-box h3 { margin-bottom: 15px; color: #0f172a; font-size: 1.5rem; }
 
-        /* EXPERIENCE TIMELINE (Matching your Image) */
+        /* EXPERIENCE TIMELINE - FULL WIDTH VERSION */
         .timeline {
-            position: relative; max-width: 900px; margin: 40px auto;
-            padding-left: 40px; border-left: 3px solid #e2e8f0;
+            position: relative; width: 100%; margin: 40px 0;
+            padding-left: 50px; border-left: 4px solid #e2e8f0;
         }
-        .timeline-item { position: relative; margin-bottom: 50px; }
+        .timeline-item { position: relative; margin-bottom: 40px; width: 100%; }
         .timeline-dot {
-            position: absolute; left: -49px; top: 5px;
-            width: 15px; height: 15px; background: #38bdf8;
+            position: absolute; left: -61px; top: 10px;
+            width: 18px; height: 18px; background: #38bdf8;
             border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 3px #38bdf8;
         }
         .experience-card {
-            background: white; padding: 30px; border-radius: 16px;
+            background: white; padding: 40px; border-radius: 16px;
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-            border: 1px solid #f1f5f9;
+            border: 1px solid #f1f5f9; width: 100%; transition: 0.3s;
         }
+        .experience-card:hover { border-color: #38bdf8; }
         .date-badge {
-            background: #38bdf8; color: white; padding: 4px 12px;
-            border-radius: 20px; font-size: 0.75rem; font-weight: bold;
+            background: #38bdf8; color: white; padding: 6px 16px;
+            border-radius: 20px; font-size: 0.85rem; font-weight: bold;
             display: inline-block; margin-bottom: 15px;
         }
-        .experience-card h3 { color: #0f172a; font-size: 1.4rem; }
-        .company { color: #0ea5e9; font-weight: 600; margin-bottom: 15px; display: block; }
-        .experience-card ul { padding-left: 20px; color: #64748b; }
-        .experience-card li { margin-bottom: 8px; }
+        .experience-card h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 5px; }
+        .company { color: #0ea5e9; font-weight: 700; font-size: 1.1rem; margin-bottom: 15px; display: block; }
+        .experience-card ul { padding-left: 20px; color: #475569; font-size: 1.05rem; }
+        .experience-card li { margin-bottom: 10px; }
 
-        /* CONTACT */
-        #contact { background: #f1f5f9; text-align: center; }
-        .contact-card { background: white; padding: 60px; border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        .contact-card h2 { margin-bottom: 20px; }
-
-        h2 { font-size: 2.5rem; color: #0f172a; margin-bottom: 10px; text-align: center; }
+        /* CONTACT SECTION */
+        #contact { text-align: center; align-items: center; justify-content: center; }
+        .contact-card { background: white; padding: 80px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); width: 100%; max-width: 1000px; }
+        
+        h2 { font-size: 3rem; color: #0f172a; margin-bottom: 20px; text-align: left; border-left: 8px solid #38bdf8; padding-left: 20px; }
+        .center-h2 { text-align: center; border: none; padding: 0; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">NINIOLA</div>
+        <div class="logo">NINIOLA.</div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -105,72 +105,135 @@
 
     <section id="home">
         <h1>Niniola Ifeoluwa Peter</h1>
-        <p>WordPress Developer • SEO Specialist • Digital Strategist</p>
+        <p>WordPress Developer • SEO Specialist • Digital Marketing Strategist</p>
     </section>
 
     <section id="about">
-        <h2>About Me</h2>
-        <p style="text-align: center; max-width: 800px; margin: 20px auto; font-size: 1.2rem;">
-            A results-driven Psychology graduate turned Tech Professional with 5+ years of experience 
-            building high-performing websites and executing data-driven marketing strategies in Lagos, Nigeria.
+        <h2 class="center-h2">About My Mission</h2>
+        <p style="text-align: center; max-width: 1000px; margin: 30px auto; font-size: 1.3rem; line-height: 1.8;">
+            I am a results-driven professional with 5+ years of experience bridging the gap between Psychology 
+            and Technology. Based in Lagos, I specialize in building conversion-focused WordPress ecosystems 
+            and executing data-driven SEO strategies that turn traffic into loyal customers.
         </p>
     </section>
 
     <section id="skills">
-        <h2>My Core Skills</h2>
+        <h2>Core Expertise</h2>
         <div class="grid-container">
-            <div class="fancy-box"><h3>WordPress</h3><p>Elementor, Custom Hooks, WooCommerce, & Site Maintenance.</p></div>
-            <div class="fancy-box"><h3>SEO</h3><p>Technical Audits, Keywords, Schema Markup, & GSC Optimization.</p></div>
-            <div class="fancy-box"><h3>Performance</h3><p>Meta Ads, Google Ads, & Conversion Rate Optimization (CRO).</p></div>
-        </div>
-    </section>
-
-    <section id="services">
-        <h2>Services Offered</h2>
-        <div class="grid-container">
-            <div class="fancy-box"><h3>Web Development</h3><p>Custom conversion-focused WordPress platforms.</p></div>
-            <div class="fancy-box"><h3>Digital Marketing</h3><p>Multi-channel campaign management & execution.</p></div>
-            <div class="fancy-box"><h3>SEO Strategy</h3><p>On-page and technical optimizations for visibility.</p></div>
+            <div class="fancy-box"><h3>Web Development</h3><p>WordPress (Custom & Maintenance), WooCommerce, Elementor, HTML/CSS, Basic PHP, Speed Optimization.</p></div>
+            <div class="fancy-box"><h3>SEO Mastery</h3><p>Technical SEO, RankMath/Yoast, Schema Markup, Keyword Research, Google Search Console & Analytics.</p></div>
+            <div class="fancy-box"><h3>Digital Marketing</h3><p>Performance Marketing (Meta Ads), Email Automation (Mailchimp/Zoho), & Conversion Rate Optimization.</p></div>
+            <div class="fancy-box"><h3>Social Strategy</h3><p>Content Strategy, Copywriting, Canva Design, WhatsApp Marketing, and Audience Engagement.</p></div>
         </div>
     </section>
 
     <section id="experience">
-        <h2>Professional Experience</h2>
+        <h2>Professional Journey</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="experience-card">
-                    <span class="date-badge">Aug 2025 – Present</span>
+                    <span class="date-badge">August 2025 – Present</span>
                     <h3>Web Developer & SEO Specialist</h3>
-                    <span class="company">Docenti Global Business School</span>
+                    <span class="company">Docenti Global Business School – Lagos</span>
                     <ul>
-                        <li>Lead development and optimization of institutional WordPress site.</li>
-                        <li>Implemented technical SEO strategies increasing student conversions.</li>
-                        <li>Improved Core Web Vitals and site performance metrics.</li>
+                        <li>Lead development and continuous optimization of the institution’s WordPress website.</li>
+                        <li>Implement technical SEO strategies (keywords, schema, internal linking) to improve rankings.</li>
+                        <li>Increase student conversions through optimized landing pages and email marketing automation.</li>
+                        <li>Improve Core Web Vitals and track performance using Google Analytics & Search Console.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="experience-card">
                     <span class="date-badge">March 2024 – June 2025</span>
                     <h3>WordPress Developer</h3>
-                    <span class="company">MSOrg Developers</span>
+                    <span class="company">MSOrg Developers – Lagos</span>
                     <ul>
-                        <li>Built SEO-optimized WooCommerce stores with secure payments.</li>
-                        <li>Improved site speed and mobile responsiveness across all projects.</li>
+                        <li>Built and maintained SEO-optimized WordPress websites and WooCommerce stores.</li>
+                        <li>Improved site speed, responsiveness, and performance across various client projects.</li>
+                        <li>Managed plugins, hosting environments, and website security protocols.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="experience-card">
                     <span class="date-badge">2023 – 2024</span>
                     <h3>WordPress Developer</h3>
-                    <span class="company">Legal Digital NG</span>
+                    <span class="company">Legal Digital NG – Lagos</span>
                     <ul>
-                        <li>Designed specialized web solutions for legal firms.</li>
-                        <li>Enhanced technical SEO and metadata compliance.</li>
+                        <li>Designed and launched websites specifically for legal firms.</li>
+                        <li>Implemented SEO strategies including metadata and keyword optimization.</li>
+                        <li>Ensured compliance with legal content standards and improved loading speeds.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="experience-card">
+                    <span class="date-badge">Jan 2023 – Dec 2023</span>
+                    <h3>Social Media Manager</h3>
+                    <span class="company">Furniture West Africa (FEWA) – Lagos</span>
+                    <ul>
+                        <li>Developed and executed social media strategies, increasing engagement by 40%.</li>
+                        <li>Managed paid advertising campaigns and created high-converting product content.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="experience-card">
+                    <span class="date-badge">Jan 2022 – Dec 2022</span>
+                    <h3>Digital Marketer</h3>
+                    <span class="company">Lagos Fashion Fair – Lagos</span>
+                    <ul>
+                        <li>Managed multi-channel digital campaigns and coordinated influencer initiatives.</li>
+                        <li>Increased event visibility and traffic through strategic ads and email marketing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="experience-card">
+                    <span class="date-badge">March 2022 – Dec 2022</span>
+                    <h3>Social Media Coordinator</h3>
+                    <span class="company">ABOLLYHOST – Ibadan</span>
+                    <ul>
+                        <li>Managed social media accounts and updated WooCommerce platforms.</li>
+                        <li>Optimized website structure for better conversions and monitored campaign performance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="experience-card">
+                    <span class="date-badge">2020 – 2021</span>
+                    <h3>Website Developer & Digital Strategist</h3>
+                    <span class="company">Homex West Africa – Lagos</span>
+                    <ul>
+                        <li>Developed and managed WordPress/WooCommerce websites with full SEO implementation.</li>
+                        <li>Managed product listings and improved user engagement through traffic analysis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="experience-card">
+                    <span class="date-badge">June 2021 – Present</span>
+                    <h3>Freelance WordPress Developer</h3>
+                    <span class="company">Fiverr (Global Clients)</span>
+                    <ul>
+                        <li>Built global e-commerce systems with integrated payment gateways.</li>
+                        <li>Executed SEO audits and performance optimization for international brands.</li>
                     </ul>
                 </div>
             </div>
@@ -179,30 +242,31 @@
 
     <section id="contact">
         <div class="contact-card">
-            <h2>Let's Collaborate</h2>
-            <p><strong>Email:</strong> niniolaifeoluwa54@gmail.com</p>
-            <p><strong>Phone:</strong> +234 810 973 3031</p>
-            <p><strong>Location:</strong> Lagos, Nigeria</p>
+            <h2 class="center-h2">Ready to grow?</h2>
+            <div style="font-size: 1.5rem; margin-top: 30px;">
+                <p>Email: <strong>niniolaifeoluwa54@gmail.com</strong></p>
+                <p>Phone: <strong>+234 810 973 3031</strong></p>
+                <p style="margin-top: 20px; color: #38bdf8;">Lagos, Nigeria</p>
+            </div>
         </div>
     </section>
 
     <script>
-        // Interactive "Moving" Effect on Click
-        document.querySelectorAll('.fancy-box, .experience-card').forEach(box => {
-            box.addEventListener('mousedown', function() {
-                this.style.transform = "scale(0.95) rotate(-1deg)";
-            });
-            box.addEventListener('mouseup', function() {
-                this.style.transform = "translateY(-10px) scale(1.02)";
+        // Smooth Scrolling logic
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Smooth Scroll Logic
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+        // Fancy Box Animation Effect
+        document.querySelectorAll('.fancy-box, .experience-card').forEach(box => {
+            box.addEventListener('click', function() {
+                this.style.transition = "0.2s";
+                this.style.transform = "scale(0.98)";
+                setTimeout(() => { this.style.transform = "scale(1)"; }, 200);
             });
         });
     </script>
