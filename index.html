@@ -1,275 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NiniolaCodes | Senior Full-Stack Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Tobi-Inspired Enterprise Color Palette */
-        :root {
-            --bg-deep: #000000;
-            --bg-charcoal: #0a0a0a;
-            --bg-card: #111111;
-            --accent-blue: #007aff;
-            --border: #262626;
-            --text-white: #ffffff;
-            --text-muted: #888888;
-            --glass: rgba(10, 10, 10, 0.8);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-white);
-            line-height: 1.6;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
 
-        /* --- NAVIGATION (Sticky Glassmorphism) --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 8%;
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-        }
+body{
+    background:#0f172a;
+    color:#fff;
+}
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.3rem;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-        }
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background:#020617;
+    position:sticky;
+    top:0;
+}
 
-        .logo span { color: var(--accent-blue); }
+nav h2{
+    color:#38bdf8;
+}
 
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
+nav a{
+    color:#fff;
+    margin-left:20px;
+    text-decoration:none;
+}
 
-        .nav-links a:hover { color: var(--text-white); }
+/* HERO */
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+}
 
-        .btn-nav {
-            background: var(--accent-blue);
-            color: white !important;
-            padding: 8px 20px;
-            border-radius: 6px;
-        }
+.hero h1{
+    font-size:50px;
+}
 
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-            background: radial-gradient(circle at top right, #001d3d 0%, #000 50%);
-        }
+.hero span{
+    color:#38bdf8;
+}
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 800;
-            letter-spacing: -3px;
-            margin-bottom: 1.5rem;
-            line-height: 1;
-        }
+.btn{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    background:#38bdf8;
+    color:#000;
+    cursor:pointer;
+    border-radius:5px;
+}
 
-        .hero h1 span {
-            background: linear-gradient(to right, var(--accent-blue), #5ac8fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* SECTION */
+section{
+    padding:60px 10%;
+}
 
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 650px;
-            margin-bottom: 2.5rem;
-        }
+h2{
+    margin-bottom:20px;
+    color:#38bdf8;
+}
 
-        /* --- SERVICES SECTION --- */
-        .section { padding: 100px 8%; }
+/* SKILLS */
+.skills{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-        .section-tag {
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            display: block;
-        }
+.skill{
+    background:#1e293b;
+    padding:15px 20px;
+    border-radius:5px;
+}
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            border-left: 5px solid var(--accent-blue);
-            padding-left: 20px;
-        }
+/* PROJECTS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+}
 
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+.project{
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+    transition:0.3s;
+}
 
-        .service-card {
-            background: var(--bg-card);
-            padding: 40px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            transition: 0.3s;
-        }
+.project:hover{
+    transform:translateY(-10px);
+}
 
-        .service-card:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-5px);
-        }
+/* CONTACT */
+.contact input, .contact textarea{
+    width:100%;
+    margin-bottom:10px;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
 
-        .service-card h3 { margin-bottom: 15px; font-size: 1.5rem; }
-        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#020617;
+}
 
-        /* --- PROJECT CARDS --- */
-        .project-card {
-            background: var(--bg-charcoal);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: 0.4s;
-        }
-
-        .project-card:hover { border-color: #444; }
-
-        .project-info { padding: 30px; }
-
-        .tech-tags {
-            margin-top: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            font-size: 0.7rem;
-            background: #1a1a1a;
-            color: var(--accent-blue);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-weight: 600;
-            border: 1px solid var(--border);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 80px 8% 40px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .footer-cta h2 { font-size: 3rem; margin-bottom: 20px; }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 3rem; }
-            .section-title { font-size: 2rem; }
-        }
-    </style>
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero h1{
+        font-size:32px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <div class="logo">NINIOLA<span>CODES</span></div>
-        <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#work">Portfolio</a>
-            <a href="mailto:your-email@gmail.com" class="btn-nav">Hire Me</a>
-        </div>
-    </nav>
+<!-- NAV -->
+<nav>
+<h2>MyPortfolio</h2>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 
-    <section class="hero">
-        <span class="section-tag">High-Performance Development</span>
-        <h1>Digital Architecture <span>Optimized.</span></h1>
-        <p>I engineer scalable full-stack applications and high-conversion digital experiences for forward-thinking brands.</p>
-        <a href="#work" style="text-decoration: none; color: white; border: 1px solid var(--border); padding: 12px 30px; border-radius: 8px;">View Projects</a>
-    </section>
+<!-- HERO -->
+<div class="hero">
+<h1>Hi, I'm <span>Your Name</span></h1>
+<p>Frontend Developer | WordPress Expert</p>
+<button class="btn" onclick="scrollToSection('projects')">View My Work</button>
+</div>
 
-    <section class="section" id="services">
-        <span class="section-tag">Expertise</span>
-        <h2 class="section-title">Core Services</h2>
-        <div class="grid-3">
-            <div class="service-card">
-                <h3>SaaS Development</h3>
-                <p>Building complex, subscription-based platforms with secure backend architecture and real-time data.</p>
-            </div>
-            <div class="service-card">
-                <h3>UI/UX Optimization</h3>
-                <p>Translating design systems into high-speed frontend interfaces that drive user engagement.</p>
-            </div>
-            <div class="service-card">
-                <h3>Cloud Solutions</h3>
-                <p>Architecting serverless deployments and automated pipelines for 99.9% uptime and scalability.</p>
-            </div>
-        </div>
-    </section>
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<p>I build modern, responsive websites using HTML, CSS, JavaScript, and WordPress. I focus on clean design and performance.</p>
+</section>
 
-    <section class="section" id="work" style="background: var(--bg-charcoal);">
-        <span class="section-tag">Case Studies</span>
-        <h2 class="section-title">Selected Work</h2>
-        <div class="grid-3">
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>Enterprise ERP System</h3>
-                    <p>A full-scale resource planning tool for streamlining corporate logistics.</p>
-                    <div class="tech-tags">
-                        <span class="tag">REACT</span>
-                        <span class="tag">NODE.JS</span>
-                        <span class="tag">POSTGRES</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>Fintech Dashboard</h3>
-                    <p>Real-time crypto-currency tracking with advanced data visualization.</p>
-                    <div class="tech-tags">
-                        <span class="tag">TYPESCRIPT</span>
-                        <span class="tag">D3.JS</span>
-                        <span class="tag">AWS</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills">
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">WordPress</div>
+<div class="skill">Elementor</div>
+</div>
+</section>
 
-    <footer>
-        <div class="footer-cta">
-            <h2>Let's build the <br>future together.</h2>
-            <p style="color: var(--text-muted); margin-bottom: 30px;">Currently accepting new projects for 2026.</p>
-            <a href="mailto:your-email@gmail.com" class="btn-nav" style="padding: 15px 40px; font-size: 1.1rem; text-decoration: none;">Contact Niniola</a>
-        </div>
-        <p style="margin-top: 80px; font-size: 0.8rem; color: #444;">&copy; 2026 NINIOLACODES. ALL RIGHTS RESERVED.</p>
-    </footer>
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="projects">
+<div class="project">
+<h3>Business Website</h3>
+<p>Built with WordPress & Elementor.</p>
+</div>
+
+<div class="project">
+<h3>Portfolio Website</h3>
+<p>Responsive personal portfolio design.</p>
+</div>
+
+<div class="project">
+<h3>Landing Page</h3>
+<p>High converting landing page UI.</p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Me</h2>
+<div class="contact">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Your Message"></textarea>
+<button class="btn">Send Message</button>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Your Name</p>
+</footer>
+
+<script>
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
 
 </body>
 </html>
