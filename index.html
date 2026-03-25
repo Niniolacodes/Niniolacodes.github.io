@@ -1690,3 +1690,283 @@
         });
     });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<style>
+    .main-footer {
+        background-color: #0b1120; /* Dark Navy Background matching contact section */
+        padding: 80px 5% 30px 5%;
+        color: #ffffff;
+        width: 100%;
+        border-top: 1px solid #1e293b;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 40px;
+    }
+
+    /* Brand Column */
+    .footer-brand .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    /* Updated to display profile image */
+    .footer-brand .logo-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px; /* Maintain rounded rectangle style */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        overflow: hidden; /* Ensure image stays within bounds */
+        background: #1e293b; /* Fallback background */
+    }
+
+    /* Styling for the image itself */
+    .footer-brand .logo-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio without distorting */
+    }
+
+    .footer-brand h2 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    .footer-brand p {
+        color: #94a3b8;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .footer-socials {
+        display: flex;
+        gap: 12px;
+    }
+
+    .footer-socials a {
+        width: 38px;
+        height: 38px;
+        background: #1e293b;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 18px;
+    }
+
+    .footer-socials a:hover {
+        background: #38bdf8;
+        transform: translateY(-3px);
+    }
+
+    /* Links Columns */
+    .footer-column h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 15px;
+    }
+
+    .footer-links a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+        color: #38bdf8;
+        padding-left: 5px;
+    }
+
+    /* Contact Column */
+    .footer-contact li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        color: #94a3b8;
+        font-size: 0.95rem;
+    }
+
+    .footer-contact i {
+        color: #38bdf8;
+        font-size: 1.1rem;
+    }
+
+    .footer-contact a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .footer-contact a:hover {
+        color: #38bdf8;
+    }
+
+    /* Bottom Bar */
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 60px auto 0 auto;
+        padding-top: 30px;
+        border-top: 1px solid #1e293b;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        color: #64748b;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom .built-with {
+        color: #94a3b8;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom .built-with i {
+        color: #38bdf8;
+        margin: 0 4px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .footer-container { grid-template-columns: 1fr 1fr; gap: 50px; }
+    }
+
+    @media (max-width: 600px) {
+        .footer-container { grid-template-columns: 1fr; text-align: center; }
+        .footer-brand .footer-logo, .footer-socials { justify-content: center; }
+        .footer-contact li { justify-content: center; }
+    }
+</style>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <div class="logo-icon">
+                    <img src="https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg" alt="Niniola Ifeoluwa">
+                </div>
+                <h2>NINIOLA IFEOLUWA</h2>
+            </div>
+            <p>Full Stack WordPress Developer & Digital Marketing Strategist building innovative solutions that transform businesses.</p>
+            <div class="footer-socials">
+                <a href="https://instagram.com/bluntyaboutme" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="https://wa.me/2348109733031"><i class='bx bxl-whatsapp'></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul class="footer-links">
+                <li><a href="#">PHP/Laravel Development</a></li>
+                <li><a href="#">WordPress Development</a></li>
+                <li><a href="#">Digital Marketing</a></li>
+                <li><a href="#">Chatbot Development</a></li>
+                <li><a href="#">Technical Consultancy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Get In Touch</h3>
+            <ul class="footer-contact">
+                <li>
+                    <i class='bx bx-envelope'></i>
+                    <a href="mailto:niniolaifeoluwa54@gmail.com">niniolaifeoluwa54@gmail.com</a>
+                </li>
+                <li>
+                    <i class='bx bx-phone'></i>
+                    <a href="tel:+2348109733031">+234 810 973 3031</a>
+                </li>
+                <li>
+                    <i class='bx bx-map'></i>
+                    <span>Lagos, Nigeria</span>
+                </li>
+                <li>
+                    <i class='bx bx-globe'></i>
+                    <a href="#">niniolacodes.github.io</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Niniola Ifeoluwa. All Rights Reserved.</p>
+        <div class="built-with">
+            Built with <i class='bx bxs-heart'></i> using PHP, HTML, CSS & JavaScript
+        </div>
+    </div>
+</footer>
