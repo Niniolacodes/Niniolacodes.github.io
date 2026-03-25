@@ -22,7 +22,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         body { background-color: #f8fafc; color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
 
-        /* --- Updated Navigation --- */
+        /* --- Navigation --- */
         nav {
             position: fixed; top: 0; width: 100%; background: var(--nav-bg);
             display: flex; justify-content: space-between; align-items: center;
@@ -34,7 +34,7 @@
         .logo-text { color: #fff; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
         .logo-text span { color: var(--primary-blue); }
 
-        /* Menu Desktop */
+        /* Desktop Menu */
         .nav-menu { display: flex; list-style: none; align-items: center; }
         .nav-menu li { margin-left: 20px; }
         .nav-menu li a { text-decoration: none; color: #cbd5e1; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
@@ -61,7 +61,7 @@
         }
         @media (min-width: 1025px) { .menu-close-btn { display: none; } }
 
-        /* --- Your Original Hero Section --- */
+        /* --- Hero Section --- */
         #home {
             height: 65vh; background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://res.cloudinary.com/dssaejqkg/image/upload/v1774346397/WhatsApp_Image_2026-03-23_at_2.47.54_PM_v5dsv0.jpg');
             background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 5%;
@@ -69,7 +69,7 @@
         #home h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; margin-bottom: 15px; }
         #home p { font-size: 1.2rem; color: #cbd5e1; max-width: 750px; font-weight: 400; }
 
-        /* --- Your Original About Section --- */
+        /* --- About Me Section --- */
         #about { padding: 100px 10%; background: white; }
         .about-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; max-width: 1200px; margin: 0 auto; align-items: center; }
         .about-image img { width: 100%; border-radius: 30px; box-shadow: 20px 20px 60px #bebebe; }
@@ -108,11 +108,11 @@
             <div class="menu-close-btn"><i class='bx bx-x'></i></div>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#skills">My Skills</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#projects">Featured Projects</a></li>
+            <li><a href="#achievements">Key Achievements</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -129,8 +129,8 @@
             </div>
             <div class="about-content">
                 <h2>About Me</h2>
-                <p>I am a <span class="highlight">WordPress Developer and SEO Specialist</span> with over 8 years of experience building high-performance digital ecosystems. My approach to web development is unique: I hold a <span class="highlight">B.Sc. in Psychology from Federal University Oye Ekiti</span>.</p>
-                <p>Throughout my career, I have moved beyond just "building websites" to creating conversion-focused platforms. Whether it's architecting complex WooCommerce stores or leading growth strategies for institutions like <span class="highlight">Docenti Global Business School</span>, my goal is always to turn visitors into loyal users.</p>
+                <p>I am a <span class="highlight">WordPress Developer and SEO Specialist</span> with over 8 years of experience building high-performance digital ecosystems. My approach is unique, combining technical expertise with insights from my <span class="highlight">B.Sc. in Psychology from FUOYE</span>.</p>
+                <p>I specialize in turning visitors into loyal users through technical SEO, workflow automation, and scalable WordPress solutions that perform.</p>
             </div>
         </div>
     </section>
@@ -143,13 +143,16 @@
         const closeBtn = document.querySelector(".menu-close-btn");
         const scrollTopBtn = document.getElementById("scrollTopBtn");
 
+        // Mobile Menu Controls
         openBtn.onclick = () => navMenu.classList.add("active");
         closeBtn.onclick = () => navMenu.classList.remove("active");
 
+        // Close menu when clicking any link
         document.querySelectorAll(".nav-menu a").forEach(link => {
             link.onclick = () => navMenu.classList.remove("active");
         });
 
+        // Scroll logic for Top Button
         window.onscroll = function() {
             if (document.documentElement.scrollTop > 400) {
                 scrollTopBtn.classList.add("show");
